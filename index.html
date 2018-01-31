@@ -1,5 +1,6 @@
 <!doctype html>
 <html>
+<<<<<<< HEAD
 	<head>
 		<meta charset="utf-8">
 		<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
@@ -47,3 +48,140 @@
 		</script>
 	</body>
 </html>
+=======
+
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+
+    <title>reveal.js</title>
+
+    <link rel="stylesheet" href="css/reveal.css">
+    <link rel="stylesheet" href="css/theme/serif.css">
+
+    <!-- Theme used for syntax highlighting of code -->
+    <link rel="stylesheet" href="lib/css/zenburn.css">
+    <link rel="stylesheet" href="css/reveal-override.css">
+
+    <!-- Printing and PDF exports -->
+    <script>
+        var link = document.createElement('link');
+        link.rel = 'stylesheet';
+        link.type = 'text/css';
+        link.href = window.location.search.match(/print-pdf/gi) ? 'css/print/pdf.css' : 'css/print/paper.css';
+        document.getElementsByTagName('head')[0].appendChild(link);
+    </script>
+</head>
+
+<body>
+    <div class="reveal">
+        <div class="slides">
+            <section>
+                <h1>Welcome to scalability 101</h1>
+            </section>
+            <section>
+                <title>What is scalability?</title>
+                <div>
+                    <p>Scalability is the capability of a system, network, or process to handle a growing amount of work, or its potential to be enlarged to accommodate that growth. For example, a system is considered scalable if it is capable of increasing
+                        its total output under an increased load when resources (typically hardware) are added.</p>
+
+                </div>
+            </section>
+            <section>
+                <p>A system whose performance improves after adding hardware, proportionally to the capacity added, is said to be a scalable system.
+                </p>
+            </section>
+
+            <section>
+                <title>Distributed systems, degrees of parallelism.</title>
+                <p>Given an specific workload, we can design our application it in three different ways:
+                    <li>
+                        To be executed concurrently.
+                    </li>
+                    <li>
+                        Parallely.
+                    </li>
+                    <li>
+                        Distributedly.
+                    </li>
+
+                </p>
+                <aside class="notes">
+                    <p>Concurrent programming, the workload is scheduled in different threads that are time sliced or interleaved.</p>
+                    <p>The execution of two blocks never overlaps.</p>
+                    <p>In parallel computation execution occurs at the same physical instant. Parallel execution is impossible on a single processor machine</p>
+                    <p>Distributed computation involves network traffic to coordinate the workload, and may or may not involve multiprocessor machines. In each machine parallel or concurrent execution could be done. </p>
+                </aside>
+            </section>
+
+
+            <section>Evolution of CPU processors
+                <img data-src="img/cpucores.png" />
+
+                <aside class="notes">
+                    <p>When CPU manufacturers hit the frequency wall they started to add cores to CPUs to increase CPU power while keeping energy consumption at the same level</p>
+                </aside>
+            </section>
+
+            <section>Evolution of available RAM memory
+                <img data-src="img/RAMAvg.png" width="90%" />
+            </section>
+
+            <section>Evolution of Global IP traffic
+                <img data-src="img/iptraffic.png" width="90%" />
+            </section>
+
+            <section>Where we deploy applications?
+
+                <li title="environment">On premise</li>
+                <li>The cloud TM</li>
+
+                <li title="packaging">VMs</li>
+                <li>Containers</li>
+
+                <aside class="notes">
+                    Bare metal, we manage our own servers. The cloud. Someone somewhere gave us servers and services for deploying our applications. VM an emulated server Container a glorified processTM
+                </aside>
+            </section>
+            <section>Evolution of Global IP traffic
+                <img data-src="img/cloud_timeline.jpg" width="90%" />
+            </section>
+            <section>What is a VM?</section>
+            <section>What precisely is a container?</section>
+
+
+
+
+
+        </div>
+    </div>
+
+    <script src="lib/js/head.min.js"></script>
+    <script src="js/reveal.js"></script>
+
+    <script>
+        // More info about config & dependencies:
+        // - https://github.com/hakimel/reveal.js#configuration
+        // - https://github.com/hakimel/reveal.js#dependencies
+        Reveal.initialize({
+            dependencies: [{
+                src: 'plugin/markdown/marked.js'
+            }, {
+                src: 'plugin/markdown/markdown.js'
+            }, {
+                src: 'plugin/notes/notes.js',
+                async: true
+            }, {
+                src: 'plugin/highlight/highlight.js',
+                async: true,
+                callback: function() {
+                    hljs.initHighlightingOnLoad();
+                }
+            }]
+        });
+    </script>
+</body>
+
+</html>
+>>>>>>> Initial commit
