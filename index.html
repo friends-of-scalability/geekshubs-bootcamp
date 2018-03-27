@@ -149,9 +149,115 @@
             </section>
             <section>What is a VM?</section>
             <section>What precisely is a container?</section>
+            <section>The development workflow?</section>
 
+            <aside class="notes">
+                CI/CD Notes Devops Tools
+            </aside>
+            <section>How to ship applications?</section>
+            <aside class="notes">
+                CI/CD Tooling: Puppet,Ansible Config Management Tooling setup software in servers and configure. How to provision servers? Horrorform or Cloud specific tools. Spinnaker
+            </aside>
+            <section>Distributed systems?</section>
+            <aside class="notes">
+                * Why so serious?
+            </aside>
+            <section>Monoliths versus Microservices</section>
+            <aside class="notes">
+                * Approach, differences.
+            </aside>
+            <section>Cloud options</section>
+            <aside class="notes">
+                * List cloud options. * What is cloud. * What a typical cloud offers.
+            </aside>
+            <section>k8s primer</section>
+            <aside class="notes">
+                * kubernetes offerings. * What is kubernetes. * What is helm. * quick demo.
+            </aside>
+            <section>Our case, let's build an url shortener</section>
+            <aside class="notes">
+                * first clone the repo. * make the software build. * test it on k8s. * deploy it on AWS.
+            </aside>
+            <section>Some problems appears</section>
+            <aside class="notes">
+                * hardcoded config. * no persistence * how to handle more than one instance?
+            </aside>
+            <section>Lets fix it</section>
+            <aside class="notes">
+                * config management. * handling state. * adding a loadbalancer. * adding a DB.
+            </aside>
+            <section>About loadbalancing</section>
+            <aside class="notes">
+                * What is loadbalancing? * handling state. * classes of loadbalancers. * the trend.
+            </aside>
+            <section>About config management</section>
+            <aside class="notes">
+                * 12 factor apps. * config as environment variables.
+            </aside>
+            <section>12 factor chapa</section>
+            <aside class="notes">
+                * 12 factor apps. * config as environment variables.
+            </aside>
+            <section>Explaining our build environment and workflow</section>
+            <aside class="notes">
+                * DB SPOF. * NO SCALING
+            </aside>
+            <section>Play and deploy</section>
+            <aside class="notes">
+                * DB SPOF. * NO SCALING
+            </aside>
+            <!-- END OF FRIDAY -->
+            <section>current shortcomings of our architecture.</section>
+            <aside class="notes">
+                * specialize clusters, create two cluster one for resolvers and another for shorteners. * create an api gateway to call clusters. * the service discovery problem. introducing circuit breaker and client side load balancing. * We need to adding scaling
+                policies, massive load
+            </aside>
+            <section>Autoscaling.</section>
+            <aside class="notes">
+                * specialize clusters, create two cluster one for resolvers and another for shorteners. * create an api gateway to call clusters. * the service discovery problem. introducing circuit breaker and client side load balancing. * Adding scaling policies, massive
+                load
+            </aside>
+            <section>Metrics.</section>
+            <aside class="notes">
+                * You need metrics to get scaling.
+            </aside>
 
-
+            <section>Service discovery options pros and cons.</section>
+            <aside class="notes">
+                * specialize clusters, create two cluster one for resolvers and another for shorteners. * create an api gateway to call clusters. * the service discovery problem. introducing circuit breaker and client side load balancing. * Adding scaling policies, massive
+                load
+            </aside>
+            <section>circuit breaker pattern.</section>
+            <aside class="notes">
+                * specialize clusters, create two cluster one for resolvers and another for shorteners. * create an api gateway to call clusters. * the service discovery problem. introducing circuit breaker and client side load balancing. * Adding scaling policies, massive
+                load
+            </aside>
+            <!-- go for lunch -->
+            <section>We can do better</section>
+            <aside class="notes">
+                * improved service resilience but still we have a DB problem. * we dont know whats happening except CPU.
+            </aside>
+            <section>Scaling the DB</section>
+            <aside class="notes">
+                * disgression about it * pay for one dynamoDB, know the limits. * CockroachDB * cassandra * dynamoDB vs spanner. * consistency models strong vs eventual. * NoSQL vs SQL. * "traditional relational databases".
+            </aside>
+            <section>Observability</section>
+            <aside class="notes">
+                * Zipkin or Opentracing. * Prometheus. * Logs rant.
+            </aside>
+            <section>Chaos engineering, prepare for the worst.</section>
+            <aside class="notes">
+                * Definition. * Chaos Monkeys. * Do the monkey.
+            </aside>
+            <section>SLA/SLI/SLO</section>
+            <aside class="notes">
+                * Some good bullshit
+            </aside>
+            <section>Some architectures</section>
+            <aside class="notes">
+                * Event Queue and so on.
+            </aside>
+            <!-- the end -->
 
 
         </div>
