@@ -29,41 +29,51 @@
     <div class="reveal">
         <div class="slides">
             <section>
-                <h1>Welcome to scalability 101</h1>
+                <h2>Welcome to scalability 101</h2>
             </section>
+            <section>
+                <h2>Block 1: Introduction</h2>
+            </section>
+
             <section>
                 <title>What is scalability?</title>
                 <div>
-                    <p>Scalability is the capability of a system, network, or process to handle a growing amount of work, or its potential to be enlarged to accommodate that growth. For example, a system is considered scalable if it is capable of increasing
-                        its total output under an increased load when resources (typically hardware) are added.</p>
+
+                    <q>Scalability is the capability of a system, network, or process to handle a growing amount of work, or its potential to be enlarged to accommodate that growth. For example, a system is considered scalable if it is capable of increasing
+                        its total output under an increased load when resources (typically hardware) are added.</q>
 
                 </div>
             </section>
             <section>
-                <p>A system whose performance improves after adding hardware, proportionally to the capacity added, is said to be a scalable system.
-                </p>
+                <h3>Properties of a system</h3>
+                <ul>
+                    <li> <b>Scalable</b>: a system whose performance improves after adding hardware, proportionally to the capacity added. </li>
+                    <li> <b>Resilient or graceful degration</b>: a resilient control system is one that maintains state awareness and an accepted level of operational normalcy in response to disturbances. </li>
+                    <li> <b>Distributed</b>: a distributed system is a model in which components located on networked computers communicate and coordinate their actions by passing messages. </li>
+                </ul>
             </section>
 
             <section>
-                <title>Distributed systems, degrees of parallelism.</title>
-                <p>Given an specific workload, we can design our application it in three different ways:
-                    <li>
-                        To be executed concurrently.
-                    </li>
-                    <li>
-                        Parallely.
-                    </li>
-                    <li>
-                        Distributedly.
-                    </li>
+                <h3>Distributed systems, degrees of parallelism.</h3>
+                <p>We can design our application:
+                    <ul>
+                        <li>
+                            To be executed concurrently.
+                        </li>
+                        <li>
+                            Parallely.
+                        </li>
+                        <li>
+                            Distributedly.
+                        </li>
+                    </ul>
 
-                </p>
-                <aside class="notes">
-                    <p>Concurrent programming, the workload is scheduled in different threads that are time sliced or interleaved.</p>
-                    <p>The execution of two blocks never overlaps.</p>
-                    <p>In parallel computation execution occurs at the same physical instant. Parallel execution is impossible on a single processor machine</p>
-                    <p>Distributed computation involves network traffic to coordinate the workload, and may or may not involve multiprocessor machines. In each machine parallel or concurrent execution could be done. </p>
-                </aside>
+                    <aside class="notes">
+                        <p>Concurrent programming, the workload is scheduled in different threads that are time sliced or interleaved.</p>
+                        <p>The execution of two blocks never overlaps.</p>
+                        <p>In parallel computation execution occurs at the same physical instant. Parallel execution is impossible on a single processor machine</p>
+                        <p>Distributed computation involves network traffic to coordinate the workload, and may or may not involve multiprocessor machines. In each machine parallel or concurrent execution could be done. </p>
+                    </aside>
             </section>
 
 
@@ -83,24 +93,76 @@
                 <img data-src="img/iptraffic.png" width="90%" />
             </section>
 
-            <section>Where we deploy applications?
-
-                <li title="environment">On premise</li>
-                <li>The cloud TM</li>
-
-                <li title="packaging">VMs</li>
-                <li>Containers</li>
-
+            <section>
+                <h3>Where we deploy applications?</h3>
+                <ul>
+                    <li title="environment">On premise, bare metal.</li>
+                    <li>Public cloud, AWS</li>
+                    <li>Public cloud, GCP</li>
+                    <li>Public cloud, Azure</li>
+                    <li>Public cloud, Heroku</li>
+                    <li>Private cloud, OpenStack</li>
+                    <li>Private cloud, VSphere</li>
+                    <li>Mesos/Marathon/DCOS</li>
+                    <li>Kubernetes</li>
+                    <li>Nomad</li>
+                    <li>Titus</li>
+                </ul>
                 <aside class="notes">
                     Bare metal, we manage our own servers. The cloud. Someone somewhere gave us servers and services for deploying our applications. VM an emulated server Container a glorified processTM
                 </aside>
             </section>
-            <section>Evolution of Global IP traffic
+            <section>
+                <h3>Cloud timeline</h3>
                 <img data-src="img/cloud_timeline.jpg" width="90%" />
             </section>
-            <section>What is a VM?</section>
-            <section>What precisely is a container?</section>
-            <section>The development workflow?</section>
+            <section>
+                <h3>What we deploy?</h3>
+                <ul>
+                    <li>Virtual Machines. </li>
+                    <li>Containers. </li>
+                    <li>code </li>
+                </ul>
+                <aside class="notes">
+                    We deploy either AMIs, containers or code in a serverless or heroku mode.
+                </aside>
+            </section>
+            <section>
+                <h3>Disgression: what is a container?</h3>
+                <img data-src="img/linux-container.png" width="100%" />
+            </section>
+            <section>
+                <h3>How we deploy?</h3>
+                <p><b><i>Snowflake servers</i></b>: an operator copies code in the server and install it and restart services manually. </p>
+                <p><b><i>With config management</i></b>: using config management tools like <i>Puppet</i>, <i>Ansible</i>, <i>SaltStack</i>, <i>Chef</i>, <i>Juju</i> we get PhoenixServers. </p>
+                <p><b><i>Using immutable infrastructure (golden image)</i></b>: we create an artifact that is never modified while being promoted or deployed between environments.</p>
+                <aside class="notes">
+                    Benefits of immutable infrastructure?
+
+                </aside>
+            </section>
+            <section>
+                <h3>How we organize deployments?</h3>
+                <p><b>Deployment day!</b>: after QA there is a date at someone, not the developers manages the deployment. </p>
+                <p><b>Continuous deployment/delivery</b>: there is an automated process (a pipeline) that fetch the source code from a commit event, builds it, test it and deploy it. </p>
+            </section>
+            <section>
+                <h3>How we shift traffic between new deployment and old deployment?</h3>
+                <ul>
+                    <p><b>Highlander</b>: </p>
+                    <p><b>red/black or blue/green</b>: </p>
+                    <p><b>Rolling upgrade</b>: </p>
+                    <p><b>Canary release</b>: </p>
+                </ul>
+            </section>
+
+
+            <section>
+                <h3>How we organize deployments?</h3>
+                <p><b>Deployment day!</b>: after QA there is a date at someone, not the developers manages the deployment. </p>
+                <p><b>Continuous deployment/delivery</b>: there is an automated process (a pipeline) that fetch the source code from a commit event, builds it, test it and deploy it. </p>
+            </section>
+
 
             <aside class="notes">
                 CI/CD Notes Devops Tools
@@ -237,7 +299,18 @@
                 }
             }]
         });
+        Reveal.configure({
+            slideNumber: 'c/t',
+            showNotes: false,
+        });
     </script>
 </body>
+<footer>
+    <script></script>
+    <p style="position:absolute; bottom:0px; left:1.8em; font-size: 1em !important;">
+        <img src="img/geekshubs.jpeg" width="90px">
+    </p>
+
+</footer>
 
 </html>
