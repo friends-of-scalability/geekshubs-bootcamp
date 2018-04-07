@@ -9,11 +9,13 @@
     <title>reveal.js</title>
 
     <link rel="stylesheet" href="css/reveal.css">
+
     <link rel="stylesheet" href="css/theme/serif.css">
 
     <!-- Theme used for syntax highlighting of code -->
     <link rel="stylesheet" href="lib/css/zenburn.css">
     <link rel="stylesheet" href="css/reveal-override.css">
+
 
     <!-- Printing and PDF exports -->
     <script>
@@ -26,17 +28,31 @@
 </head>
 
 <body>
+
     <div class="reveal">
+        <header style="position: absolute;top: 50px; left: 100px; z-index:500; font-size:100px;background-color: rgba(255, 255, 255, 0.149)"></header>
         <div class="slides">
-            <section>
-                <h2>Welcome to scalability 101</h2>
-            </section>
-            <section>
-                <h2>Block 1: Introduction</h2>
+
+            <section data-state="header1">
+                <style>
+                    .header1 header:after {
+                        content: "Welcome to scalability 101";
+                    }
+                </style>
+
             </section>
 
             <section>
-                <title>What is scalability?</title>
+
+                <h2>Block 1: Introduction</h2>
+            </section>
+            <section data-state="header2">
+                <style>
+                    .header2 header:after {
+                        content: "What is scalability?";
+                    }
+                </style>
+
                 <div>
 
                     <q>Scalability is the capability of a system, network, or process to handle a growing amount of work, or its potential to be enlarged to accommodate that growth. For example, a system is considered scalable if it is capable of increasing
@@ -44,145 +60,262 @@
 
                 </div>
             </section>
-            <section>
-                <h3>Properties of a system</h3>
-                <ul>
+            <section data-state="header3">
+                <style>
+                    .header3 header:after {
+                        content: "Properties of a system";
+                    }
+                </style>
+                <ul data-state="list1">
+                    <style>
+                        .list1 {
+                            font-size: 70%;
+                        }
+                    </style>
                     <li> <b>Scalable</b>: a system whose performance improves after adding hardware, proportionally to the capacity added. </li>
                     <li> <b>Resilient or graceful degration</b>: a resilient control system is one that maintains state awareness and an accepted level of operational normalcy in response to disturbances. </li>
                     <li> <b>Distributed</b>: a distributed system is a model in which components located on networked computers communicate and coordinate their actions by passing messages. </li>
                 </ul>
             </section>
 
-            <section>
-                <h3>Distributed systems, degrees of parallelism.</h3>
-                <p>We can design our application:
-                    <ul>
-                        <li>
-                            To be executed concurrently.
-                        </li>
-                        <li>
-                            Parallely.
-                        </li>
-                        <li>
-                            Distributedly.
-                        </li>
-                    </ul>
+            <section data-state="header4">
+                <style>
+                    .header4 header:after {
+                        content: "Types of systems";
+                    }
+                </style>
+                <ul>
+                    <li>
+                        Concurrent systems.
+                    </li>
+                    <li>
+                        Parallel systems.
+                    </li>
+                    <li>
+                        Distributed systems.
+                    </li>
+                </ul>
 
-                    <aside class="notes">
-                        <p>Concurrent programming, the workload is scheduled in different threads that are time sliced or interleaved.</p>
-                        <p>The execution of two blocks never overlaps.</p>
-                        <p>In parallel computation execution occurs at the same physical instant. Parallel execution is impossible on a single processor machine</p>
-                        <p>Distributed computation involves network traffic to coordinate the workload, and may or may not involve multiprocessor machines. In each machine parallel or concurrent execution could be done. </p>
-                    </aside>
+                <aside class="notes">
+                    <p>Concurrent programming, the workload is scheduled in different threads that are time sliced or interleaved.</p>
+                    <p>The execution of two blocks never overlaps.</p>
+                    <p>In parallel computation execution occurs at the same physical instant. Parallel execution is impossible on a single processor machine</p>
+                    <p>Distributed computation involves network traffic to coordinate the workload, and may or may not involve multiprocessor machines. In each machine parallel or concurrent execution could be done. </p>
+                </aside>
             </section>
 
 
-            <section>Evolution of CPU processors
-                <img data-src="img/cpucores.png" />
+            <section data-state="header5">
+                <style>
+                    .header5 header:after {
+                        content: "Evolution of CPU processors.";
+                    }
+                </style>
+                <img data-src="img/cpucores.png" width="70%" />
 
                 <aside class="notes">
                     <p>When CPU manufacturers hit the frequency wall they started to add cores to CPUs to increase CPU power while keeping energy consumption at the same level</p>
                 </aside>
             </section>
 
-            <section>Evolution of available RAM memory
-                <img data-src="img/RAMAvg.png" width="90%" />
+
+            <section data-state="header6">
+                <style>
+                    .header6 header:after {
+                        content: "Evolution of available RAM memory.";
+                    }
+                </style>
+                <img data-src="img/RAMAvg.png" width="70%" />
             </section>
 
-            <section>Evolution of Global IP traffic
-                <img data-src="img/iptraffic.png" width="90%" />
+            <section data-state="header7">
+                <style>
+                    .header7 header:after {
+                        content: "Evolution of Global IP traffic.";
+                    }
+                </style>
+
+                <img data-src="img/iptraffic.png" width="70%" />
             </section>
 
-            <section>
-                <h3>Where we deploy applications?</h3>
+            <section data-state="header8">
+                <style>
+                    .header8 header:after {
+                        content: "Where we deploy applications?";
+                    }
+                </style>
                 <ul>
-                    <li title="environment">On premise, bare metal.</li>
+                    <li>On premise, bare metal.</li>
                     <li>Public cloud, AWS</li>
                     <li>Public cloud, GCP</li>
                     <li>Public cloud, Azure</li>
                     <li>Public cloud, Heroku</li>
                     <li>Private cloud, OpenStack</li>
                     <li>Private cloud, VSphere</li>
-                    <li>Mesos/Marathon/DCOS</li>
-                    <li>Kubernetes</li>
-                    <li>Nomad</li>
-                    <li>Titus</li>
                 </ul>
                 <aside class="notes">
                     Bare metal, we manage our own servers. The cloud. Someone somewhere gave us servers and services for deploying our applications. VM an emulated server Container a glorified processTM
                 </aside>
             </section>
-            <section>
-                <h3>Cloud timeline</h3>
-                <img data-src="img/cloud_timeline.jpg" width="90%" />
+            <section data-state="header8-1">
+                <style>
+                    .header8-1 header:after {
+                        content: "Where we deploy applications?";
+                    }
+                </style>
+                <ul>
+                    <li>Container orchestrator, Mesos/Marathon/DCOS</li>
+                    <li>Container orchestrator, Kubernetes</li>
+                    <li>Container orchestrator, Nomad</li>
+                    <li>Container orchestrator, Titus</li>
+                </ul>
+                <aside class="notes">
+                    Bare metal, we manage our own servers. The cloud. Someone somewhere gave us servers and services for deploying our applications. VM an emulated server Container a glorified processTM
+                </aside>
             </section>
-            <section>
-                <h3>What we deploy?</h3>
+            <section data-state="header9">
+                <style>
+                    .header9 header:after {
+                        content: "Cloud timeline";
+                    }
+                </style>
+                <img data-src="img/cloud_timeline.jpg" width="70%" />
+            </section>
+            <section data-state="header10">
+                <style>
+                    .header10 header:after {
+                        content: "What we deploy?";
+                    }
+                </style>
                 <ul>
                     <li>Virtual Machines. </li>
                     <li>Containers. </li>
-                    <li>code </li>
+                    <li>Code.</li>
                 </ul>
                 <aside class="notes">
                     We deploy either AMIs, containers or code in a serverless or heroku mode.
                 </aside>
             </section>
-            <section>
-                <h3>Disgression: what is a container?</h3>
-                <img data-src="img/linux-container.png" width="100%" />
+            <section data-state="header11">
+                <style>
+                    .header11 header:after {
+                        content: "Disgression: what is a container?";
+                    }
+                </style>
+                <img data-src="img/linux-container.png" width="70%" />
             </section>
-            <section>
-                <h3>How we deploy?</h3>
+            <section data-state="header12">
+                <style>
+                    .header12 header:after {
+                        content: "How we deploy?";
+                    }
+                </style>
                 <p><b><i>Snowflake servers</i></b>: an operator copies code in the server and install it and restart services manually. </p>
                 <p><b><i>With config management</i></b>: using config management tools like <i>Puppet</i>, <i>Ansible</i>, <i>SaltStack</i>, <i>Chef</i>, <i>Juju</i> we get PhoenixServers. </p>
                 <p><b><i>Using immutable infrastructure (golden image)</i></b>: we create an artifact that is never modified while being promoted or deployed between environments.</p>
                 <aside class="notes">
                     Benefits of immutable infrastructure?
-
                 </aside>
             </section>
-            <section>
-                <h3>How we organize deployments?</h3>
-                <p><b>Deployment day!</b>: after QA there is a date at someone, not the developers manages the deployment. </p>
+            <section data-state="header13">
+                <style>
+                    .header13 header:after {
+                        content: "How we organize deployments??";
+                    }
+                </style>
+                <p><b>Deployment day!</b>: after QA, a date is set and that date and time we do the deployment. </p>
                 <p><b>Continuous deployment/delivery</b>: there is an automated process (a pipeline) that fetch the source code from a commit event, builds it, test it and deploy it. </p>
             </section>
-            <section>
-                <h3>How we shift traffic between new deployment and old deployment?</h3>
+            <section data-state="header14">
+                <style>
+                    .header14 header:after {
+                        content: "How we shift traffic?";
+                    }
+                </style>
                 <ul>
-                    <p><b>Highlander</b>: </p>
-                    <p><b>red/black or blue/green</b>: </p>
-                    <p><b>Rolling upgrade</b>: </p>
-                    <p><b>Canary release</b>: </p>
+                    <li>
+                        <p><b>Highlander</b>: kill the old server first, then deploy the new one.</p>
+                    </li>
+                    <li>
+                        <p><b>Rolling upgrade</b>: Replace servers one by one with the new version. </p>
+                    </li>
                 </ul>
             </section>
+            <section data-state="header15">
+                <style>
+                    .header15 header:after {
+                        content: "How we shift traffic?";
+                    }
+                </style>
+                <ul>
+                    <li>
+                        <p><b>Red/black or blue/green</b>: deploy a new server group with the new version, deregister old server group from loadbalancer and register new one. </p>
+                    </li>
+                    <li>
+                        <p><b>Canary release</b>: Deploy a new server group of one server, register the new group without deregistering old one, watch metrics if everything is ok resize new group to target old group size and shrink old one. </p>
+                    </li>
+                </ul>
+            </section>
+            <section data-state="header16">
+                <style>
+                    .header16 header:after {
+                        content: "How we architecture applications?";
+                    }
+                </style>
+                <ul>
+                    <li>
+                        <p><b>Monoliths</b>: The whole application is in the same codebase and in the same deployable unit. </p>
+                    </li>
+                    <li>
+                        <p><b>(Micro)services</b>: The service is responsible of a tiny part of the domain responsability (hence the <i>micro</i> prefix), each service is a deployable unit and the communication goes through network.</p>
+                    </li>
+                    <li>
+                        <p><b>Serverless</b>: <q>Applications where some amount of server-side logic is still written but is run in stateless compute containers that are event-triggered, ephemeral, and fully managed by a 3rd party</q> </p>
+                    </li>
 
-
-            <section>
-                <h3>How we organize deployments?</h3>
-                <p><b>Deployment day!</b>: after QA there is a date at someone, not the developers manages the deployment. </p>
-                <p><b>Continuous deployment/delivery</b>: there is an automated process (a pipeline) that fetch the source code from a commit event, builds it, test it and deploy it. </p>
+                </ul>
+                <aside class="notes">Dont forget about elegant monolith! complexities for microservices!</aside>
+            </section>
+            <section data-state="header17">
+                <style>
+                    .header17 header:after {
+                        content: "How we do operations?";
+                    }
+                </style>
+                <ul>
+                    <li>
+                        <p><b>Operations/Sysadmin team</b>: specialized team that handles operations, usually doing oncall shifts, tooling for development teams and deployments</p>
+                    </li>
+                    <li>
+                        <p><b>You build it, you run it </b>: Each team takes responsability for the whole process, from coding to running the software. There are organizational challenges in embracing DevOps methodologies and oncall responsabilities. </p>
+                    </li>
+                </ul>
+            </section>
+            <section data-state="header18">
+                <style>
+                    .header18 header:after {
+                        content: "Welcome to FooBar enterprises";
+                    }
+                </style>
+                <p>You have been hired as CTO of this company and sole developer of the product.</p>
+                <p>The main product of the company is an url-shortener.</p>
+                <p>It's for now only an API, no frontend involved, it's expected to receive lots of traffic.</p>
+            </section>
+            <section data-state="header19">
+                <style>
+                    .header19 header:after {
+                        content: "Our tech stack";
+                    }
+                </style>
+                <p>Application written in golang.</p>
+                <p>Github for hosting code.</p>
+                <p>Jenkins as our CI server.</p>
+                <p>Spinnaker as our CD tool.</p>
+                <p>Kubernetes as our development environment.</p>
+                <p>AWS as our production environment.</p>
             </section>
 
 
-            <aside class="notes">
-                CI/CD Notes Devops Tools
-            </aside>
-            <section>How to ship applications?</section>
-            <aside class="notes">
-                CI/CD Tooling: Puppet,Ansible Config Management Tooling setup software in servers and configure. How to provision servers? Horrorform or Cloud specific tools. Spinnaker
-            </aside>
-            <section>Distributed systems?</section>
-            <aside class="notes">
-                * Why so serious?
-            </aside>
-            <section>Monoliths versus Microservices</section>
-            <aside class="notes">
-                * Approach, differences.
-            </aside>
-            <section>Cloud options</section>
-            <aside class="notes">
-                * List cloud options. * What is cloud. * What a typical cloud offers.
-            </aside>
             <section>k8s primer</section>
             <aside class="notes">
                 * kubernetes offerings. * What is kubernetes. * What is helm. * quick demo.
@@ -302,6 +435,7 @@
         Reveal.configure({
             slideNumber: 'c/t',
             showNotes: false,
+            pdfMaxPagesPerSlide: 1,
         });
     </script>
 </body>
