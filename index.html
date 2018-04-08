@@ -269,6 +269,19 @@
                     <li>
                         <p><b>(Micro)services</b>: The service is responsible of a tiny part of the domain responsability (hence the <i>micro</i> prefix), each service is a deployable unit and the communication goes through network.</p>
                     </li>
+
+
+                </ul>
+                <aside class="notes">Dont forget about elegant monolith! complexities for microservices!</aside>
+            </section>
+            <section data-state="header16-1">
+                <style>
+                    .header16-1 header:after {
+                        content: "How we architecture applications?";
+                    }
+                </style>
+                <ul>
+
                     <li>
                         <p><b>Serverless</b>: <q>Applications where some amount of server-side logic is still written but is run in stateless compute containers that are event-triggered, ephemeral, and fully managed by a 3rd party</q> </p>
                     </li>
@@ -309,102 +322,148 @@
                 </style>
                 <p>Application written in golang.</p>
                 <p>Github for hosting code.</p>
+                <p>Cloudformation/Helm to capture infrastructure as code.</p>
                 <p>Jenkins as our CI server.</p>
                 <p>Spinnaker as our CD tool.</p>
                 <p>Kubernetes as our development environment.</p>
                 <p>AWS as our production environment.</p>
             </section>
 
+            <section data-state="header20">
+                <style>
+                    .header20 header:after {
+                        content: "Our development process";
+                    }
+                </style>
+                <img data-src="img/cicdpipeline.png" width="90%" />
+            </section>
+            <section data-state="header21">
+                <style>
+                    .header21 header:after {
+                        content: "Github";
+                    }
+                </style>
+                <ul>
+                    <li>Github is our hosted version control system based on git.</li>
+                    <li>Our project is open source and public, if you want to host git privately, you can set up your own git server or more commonly Github Enterprise, Bitbucket or Gitlab.</li>
+                    <li>We made an organisation at Github named friendsofscalability, request access there!</li>
+                </ul>
+            </section>
+            <section data-state="header22">
+                <style>
+                    .header22 header:after {
+                        content: "Jenkins";
+                    }
+                </style>
+                <ul>
 
-            <section>k8s primer</section>
-            <aside class="notes">
-                * kubernetes offerings. * What is kubernetes. * What is helm. * quick demo.
-            </aside>
-            <section>Our case, let's build an url shortener</section>
-            <aside class="notes">
-                * first clone the repo. * make the software build. * test it on k8s. * deploy it on AWS.
-            </aside>
-            <section>Some problems appears</section>
-            <aside class="notes">
-                * hardcoded config. * no persistence * how to handle more than one instance?
-            </aside>
-            <section>Lets fix it</section>
-            <aside class="notes">
-                * config management. * handling state. * adding a loadbalancer. * adding a DB.
-            </aside>
-            <section>About loadbalancing</section>
-            <aside class="notes">
-                * What is loadbalancing? * handling state. * classes of loadbalancers. * the trend.
-            </aside>
-            <section>About config management</section>
-            <aside class="notes">
-                * 12 factor apps. * config as environment variables.
-            </aside>
-            <section>12 factor chapa</section>
-            <aside class="notes">
-                * 12 factor apps. * config as environment variables.
-            </aside>
-            <section>Explaining our build environment and workflow</section>
-            <aside class="notes">
-                * DB SPOF. * NO SCALING
-            </aside>
-            <section>Play and deploy</section>
-            <aside class="notes">
-                * DB SPOF. * NO SCALING
-            </aside>
-            <!-- END OF FRIDAY -->
-            <section>current shortcomings of our architecture.</section>
-            <aside class="notes">
-                * specialize clusters, create two cluster one for resolvers and another for shorteners. * create an api gateway to call clusters. * the service discovery problem. introducing circuit breaker and client side load balancing. * We need to adding scaling
-                policies, massive load
-            </aside>
-            <section>Autoscaling.</section>
-            <aside class="notes">
-                * specialize clusters, create two cluster one for resolvers and another for shorteners. * create an api gateway to call clusters. * the service discovery problem. introducing circuit breaker and client side load balancing. * Adding scaling policies, massive
-                load
-            </aside>
-            <section>Metrics.</section>
-            <aside class="notes">
-                * You need metrics to get scaling.
-            </aside>
+                    <li>CI, continous integration is the practice of build the software on a clean environment to detect build flaws, do integration tests </li>
+                    <li>Jenkins is an open source CI server that supports almost every build system.</li>
+                    <li>In our case each commit will trigger a webhook that triggers a build on Jenkins of that commit. </li>
+                </ul>
+            </section>
+            <section data-state="header22-2">
+                <style>
+                    .header22-2 header:after {
+                        content: "Jenkins";
+                    }
+                </style>
+                <ul>
 
-            <section>Service discovery options pros and cons.</section>
-            <aside class="notes">
-                * specialize clusters, create two cluster one for resolvers and another for shorteners. * create an api gateway to call clusters. * the service discovery problem. introducing circuit breaker and client side load balancing. * Adding scaling policies, massive
-                load
-            </aside>
-            <section>circuit breaker pattern.</section>
-            <aside class="notes">
-                * specialize clusters, create two cluster one for resolvers and another for shorteners. * create an api gateway to call clusters. * the service discovery problem. introducing circuit breaker and client side load balancing. * Adding scaling policies, massive
-                load
-            </aside>
-            <!-- go for lunch -->
-            <section>We can do better</section>
-            <aside class="notes">
-                * improved service resilience but still we have a DB problem. * we dont know whats happening except CPU.
-            </aside>
-            <section>Scaling the DB</section>
-            <aside class="notes">
-                * disgression about it * pay for one dynamoDB, know the limits. * CockroachDB * cassandra * dynamoDB vs spanner. * consistency models strong vs eventual. * NoSQL vs SQL. * "traditional relational databases".
-            </aside>
-            <section>Observability</section>
-            <aside class="notes">
-                * Zipkin or Opentracing. * Prometheus. * Logs rant.
-            </aside>
-            <section>Chaos engineering, prepare for the worst.</section>
-            <aside class="notes">
-                * Definition. * Chaos Monkeys. * Do the monkey.
-            </aside>
-            <section>SLA/SLI/SLO</section>
-            <aside class="notes">
-                * Some good bullshit
-            </aside>
-            <section>Some architectures</section>
-            <aside class="notes">
-                * Event Queue and so on.
-            </aside>
-            <!-- the end -->
+                    <li>Alternatives: TravisCI, CircleCI, TeamCity, GoCD, <a href="https://en.wikipedia.org/wiki/Comparison_of_continuous_integration_software">check out this comparison ...</a> </li>
+                    <li>Spinnaker has native integrations with Jenkins and TravisCI, however Travis only provides a hosted version and a enterprise one, so we went for Jenkins.</li>
+                    <li>Our jenkins server is at <a href="http://ci.geekshubs.friendsofscalability.com:8080/">http://ci.geekshubs.friendsofscalability.com:8080/</a></li>
+                </ul>
+            </section>
+            <section data-state="header23">
+                <style>
+                    .header23 header:after {
+                        content: "Spinnaker";
+                    }
+                </style>
+                <ul>
+                    <li>Spinnaker is an open source, multi-cloud continuous delivery platform created by Netflix, with collaborations from Google, Pivotal and other companies.</li>
+                    <li>The core of Spinnaker is the ability of creating pipelines.</li>
+                    <li>Pipelines codifies the deployment of some application following the immutable infrastructure aproach. </li>
+                    <li>Git -> Jenkins -> Spinnaker Pipeline. </li>
+                </ul>
+            </section>
+            <section data-state="header23-2">
+                <style>
+                    .header23-2 header:after {
+                        content: "Spinnaker";
+                    }
+                </style>
+                <ul>
+                    <li>The pipeline could contain several steps but at least, tipically it will have a Bake step for creating the golden image for the application</li>
+                    <li>And then a Deploy step, that will deploy this image over some cloud provider (AWS, GCP, Kubernetes)</li>
+                    <li>Our Spinnaker setup is at <a href="https://spinnaker.geekshubs.friendsofscalability.com/">https://spinnaker.geekshubs.friendsofscalability.com/</a></li>
+                </ul>
+            </section>
 
+            <section data-state="header24">
+                <style>
+                    .header24 header:after {
+                        content: "AWS";
+                    }
+                </style>
+                <img data-src="img/cloud_market.png" width="90%" />
+            </section>
+            <section data-state="header24">
+                <style>
+                    .header24 header:after {
+                        content: "AWS";
+                    }
+                </style>
+                <ul>
+                    <li>In exchange for money, AWS will provide:</li>
+                    <ul>
+                        <li><b>Compute resources:</b> EC2, ECS, VPCs,Lambda, Security Groups, AutoScaling Groups, ELB, ALB, NLB </li>
+                        <li><b>Storage resources:</b> S3, RDS (Databases), DynamoDB, Elasticache </li>
+                        <li><b>Security resources:</b> IAM, KMS </li>
+                        <li><b>Orchestration:</b> Cloudformation </li>
+                        <li><b>Others:</b> ParameterStore, ServiceDiscovery, Kinesis, API Gateway... </li>
+                    </ul>
+                </ul>
+            </section>
+            <section data-state="header25">
+                <style>
+                    .header25 header:after {
+                        content: "Docker";
+                    }
+                </style>
+                <ul>
+                    <li><i>Docker Inc</i> is the company that popularized container usage on 2013 with the docker tool.</li>
+                    <li>The docker tool has been including more than just container runtime tools, things like swarm o machine</li>
+                    <li>Docker now ships a free community edition docker-ce, an enterprise one docer-ee, and is also an open source project moby.</li>
+                </ul>
+            </section>
+            <section data-state="header26">
+                <style>
+                    .header26 header:after {
+                        content: "Docker";
+                    }
+                </style>
+                <ul>
+                    <li>The OCI initiative aims to a vendor free technology for containers.</li>
+                    <ul>
+                        <li>container image specification</li>
+                        <li>container runtime specification</li>
+                        <li>container networking specification</li>
+                        <li>container storage specification</li>
+                    </ul>
+                    <li>After the success of docker several companies built its own container runtime engines, notable ones are rkt from CoreOS or CRI-O from CNCF.</li>
+                </ul>
+
+            </section>
+            <section data-state="header27">
+                <style>
+                    .header27 header:after {
+                        content: "Kubernetes";
+                    }
+                </style>
+
+            </section>
 
         </div>
     </div>
