@@ -462,8 +462,349 @@
                         content: "Kubernetes";
                     }
                 </style>
+                <ul>
+                    <li>Container orchestration at Scale, a project that covers running application on containers from end to end.</li>
+                    <li>Started at Google, now under the CNCF Foundation, RedHat, CoreOS, Huawei and many other companies contribute to the project managed in the open.</li>
+                    <li>Fast paced project, k8s 1.0 started at 2015 - 1.10 03/2018.</li>
+                    <li>Can be installed on baremetal, lots of cloud providers offers a managed version (GKE, AKS, EKS..) </li>
+                    <li>There is also a local environment cluster project Minikube. </li>
+
+                </ul>
 
             </section>
+
+            <section data-state="header28">
+                <style>
+                    .header28 header:after {
+                        content: "Kubernetes architecture";
+                    }
+                </style>
+                <img data-src="img/Kubernetes-architecture-unixcloudfusion.png" width="90%" />
+
+            </section>
+            <section data-state="header28">
+                <style>
+                    .header28 header:after {
+                        content: "Kubernetes basic concepts";
+                    }
+                </style>
+                <table>
+                    <colgroup span="2"></colgroup>
+
+                    <tr>
+                        <td>Pod</td>
+                        <td>Group of containers that lives together</td>
+                    </tr>
+                    <tr>
+                        <td>Service</td>
+                        <td>Represents a balancer that expose traffic within the cluster or outside, the selector attribute registers pods.</td>
+                    </tr>
+                    <tr>
+                        <td>Deployment/ReplicaSet</td>
+                        <td>It watches the current pods running under the same deployment/replicaset and creates new pods if it doesnt fullfil the specification. </td>
+                    </tr>
+
+                </table>
+            </section>
+            <section data-state="header29">
+                <style>
+                    .header29 header:after {
+                        content: "Kubernetes basic concepts";
+                    }
+                </style>
+                <table>
+                    <colgroup span="2"></colgroup>
+                    <tr>
+                        <td>ConfigMaps</td>
+                        <td>Stores application configuration. </td>
+                    </tr>
+                    <tr>
+                        <td>Secrets</td>
+                        <td>Stores application secrets. </td>
+                    </tr>
+                    <tr>
+                        <td>Volumes/PersistentVolumes/StorageClass</td>
+                        <td>Defines storages sources that could be used on Deployments/Pods. </td>
+                    </tr>
+                </table>
+            </section>
+            <section data-state="header30">
+                <style>
+                    .header30 header:after {
+                        content: "Kubernetes basic concepts";
+                    }
+                </style>
+                <table>
+                    <colgroup span="2"></colgroup>
+                    <tr>
+                        <td>Ingress.</td>
+                        <td>Defines rules (ingress rules) that configures the cluster edge balancer to send traffic from outside directed to an application. </td>
+                    </tr>
+                    <tr>
+                        <td>Nodes.</td>
+                        <td>Kubernetes nodes. </td>
+                    </tr>
+
+                    <tr>
+                        <td>A bunch more.</td>
+                        <td>PodPriorities, PodSecurityPolicy, CustomResourceDefinition... </td>
+                    </tr>
+                </table>
+            </section>
+            <section data-state="header31">
+                <style>
+                    .header31 header:after {
+                        content: "Kubernetes client interaction";
+                    }
+                </style>
+                <ul>
+                    <li>Every action is done via the Kubernetes API.</li>
+                    <li>Kubernetes controllers follows the <i>Reconciler</i> pattern extensively!.</li>
+                    <li>Can interact with API through client libraries or cli (kubectl).</li>
+                    <li>Each API object has a definition that could be written over YAML or JSON.</li>
+                </ul>
+            </section>
+            <section data-state="header32">
+                <style>
+                    .header32 header:after {
+                        content: "kubectl cheat sheet";
+                    }
+                </style>
+                <table>
+                    <colgroup span="2"></colgroup>
+                    <tr>
+                        <td><code>get|describe|edit|explain|delete OBJECT</code> </td>
+                        <td>each object accepts the following actions in a CRUD way.</td>
+                    </tr>
+                    <tr>
+                        <td><code>create|replace|apply -f FILE</code> </td>
+                        <td>Creates/replaces/applies an object defintion from FILE. </td>
+                    </tr>
+                </table>
+            </section>
+            <section data-state="header33">
+                <style>
+                    .header33 header:after {
+                        content: "kubectl cheat sheet";
+                    }
+                </style>
+                <table>
+                    <colgroup span="2"></colgroup>
+                    <tr>
+                        <td><code>-o yaml|wide|jsonpath|go-template</code></td>
+                        <td>Output format for kubectl get commands, wide gives a lot of actual info whereas describe gives a temporal set of events. </td>
+                    </tr>
+                    <tr>
+                        <td><code>kubectl get|delete pods|svc|... -l LABELKEY=LABELVALUE OBJECT</code></td>
+                        <td>applies the kubectl command to whatever pods|servicers or others that matches the labels. </td>
+                    </tr>
+
+                </table>
+            </section>
+
+            <section data-state="header34">
+                <style>
+                    .header34 header:after {
+                        content: "kubectl cheat sheet";
+                    }
+                </style>
+                <p>The kubernetes documentation while not extremely updated, is well written and complete! Check it out the <a href="https://kubernetes.io/docs/reference/kubectl/overview/">kubectl one</a>. </p>
+            </section>
+            <section data-state="header35">
+                <style>
+                    .header35 header:after {
+                        content: "Hands on";
+                    }
+                </style>
+                <ul>
+                    <li>It's time for you to finish our onboarding guide deploying our application.</li>
+                </ul>
+            </section>
+            <section>
+                <h2>Block 2: Scaling/Loadbalancing</h2>
+            </section>
+            <section>
+                <h2>WDYT about our current application?</h2>
+            </section>
+            <section data-state="header36">
+                <style>
+                    .header36 header:after {
+                        content: "Sprint planning";
+                    }
+                </style>
+                <ul>
+                    <li>Set up autoscaling.</li>
+                    <li>Set up loadbalancing.</li>
+                    <li>Set up config management.</li>
+                </ul>
+            </section>
+            <section data-state="header37">
+                <style>
+                    .header37 header:after {
+                        content: "Loadbalancing";
+                    }
+                </style>
+                <img data-src="img/middlelb.png" width="90%" />
+                <p style="font-size:14px"><a href="https://blog.envoyproxy.io/introduction-to-modern-network-load-balancing-and-proxying-a57f6ff80236">A summary from the excellent post from Matt Klein</a></p>
+            </section>
+            <section data-state="header40">
+                <style>
+                    .header40 header:after {
+                        content: "Loadbalancing: benefits";
+                    }
+                </style>
+                <table>
+                    <thead>Loadbalancer benefits:</thead>
+                    <colgroup span="2"></colgroup>
+                    <tr>
+                        <td>Naming abstraction</td>
+                        <td>Each client only need to remember loadbalancer address instead of discovering services. Usually via DNS or a client library.</td>
+                    </tr>
+                    <tr>
+                        <td>Fault tolerance</td>
+                        <td> It can prevent a faulty backend to receive requests.</td>
+                    </tr>
+                    <tr>
+                        <td>Cost and performance benefits</td>
+                        <td> it can keep the network traffic distributed between different datacenters or network routes which improves latency and reduces network costs.</td>
+                    </tr>
+
+                </table>
+            </section>
+            <section data-state="header38">
+                <style>
+                    .header38 header:after {
+                        content: "Loadbalancing";
+                    }
+                </style>
+                <table>
+                    <thead>Loadbalancer classes by OSI layer.</thead>
+                    <colgroup span="2"></colgroup>
+                    <tr>
+                        <td>Layer 4 Balancers</td>
+                        <td>"Application protocol" agnostic, move bytes from source to dest. </td>
+                    </tr>
+                    <tr>
+                        <td>Layer 7 Balancers</td>
+                        <td> "Application protocol" knowdlege, most typical HTTP ones. </td>
+                    </tr>
+                </table>
+            </section>
+            <section data-state="header41">
+                <style>
+                    .header41 header:after {
+                        content: "Loadbalancing: classes";
+                    }
+                </style>
+                <table>
+                    <thead>Loadbalancer classes:</thead>
+                    <colgroup span="2"></colgroup>
+                    <tr>
+                        <td>Middle proxy</td>
+                        <td> <img data-src="img/middlelb.png" width="90%" />
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>Edge loadbalancer</td>
+                        <td><img data-src="img/edgeproxy.png" width="90%" /></td>
+                    </tr>
+
+                </table>
+            </section>
+            <section data-state="header42">
+                <style>
+                    .header42 header:after {
+                        content: "Loadbalancing: classes";
+                    }
+                </style>
+                <table>
+                    <thead>Loadbalancer classes:</thead>
+                    <colgroup span="2"></colgroup>
+                    <tr>
+                        <td>Embedded client library</td>
+                        <td><img data-src="img/embeddedlb.png" width="90%" /></td>
+                    </tr>
+                    <tr>
+                        <td>Sidecar proxy</td>
+                        <td><img data-src="img/sidecarlb.png" width="90%" /></td>
+                    </tr>
+                </table>
+            </section>
+            <section data-state="header43">
+                <style>
+                    .header43 header:after {
+                        content: "L7 Loadbalancers: typical features";
+                    }
+                </style>
+                <ul>
+                    <li>Service discovery</li>
+                    <li>Health checking</li>
+                    <li>Load balancing</li>
+                    <li>Sticky sessions</li>
+                    <li>TLS termination (HTTP/2)</li>
+                    <li>Observability
+                    </li>
+                    <li>Security and DoS mitigation
+                    </li>
+
+
+
+
+
+                </ul>
+
+            </section>
+            <section data-state="header43">
+                <style>
+                    .header43 header:after {
+                        content: "Loadbalancing algorithms";
+                    }
+                </style>
+                <ul>
+                    <li>Round Robin</li>
+                    <li>IP:hash</li>
+                    <li>Least conn</li>
+                    <li>Least latency</li>
+                    <li>Weighted Round Robin, Weighted least conn</li>
+                </ul>
+            </section>
+            <section data-state="header43">
+                <style>
+                    .header43 header:after {
+                        content: "Loadbalancing takeaways";
+                    }
+                </style>
+                <ul>
+                    <li>Networking devices are moving from dedicated hardware to sofware run on commodity software</li>
+                    <li>Container and some microservices architectures are moving towards the service mesh pattern. </li>
+                </ul>
+            </section>
+
+            <section data-state="header44">
+                <style>
+                    .header44 header:after {
+                        content: "Service Mesh";
+                    }
+                </style>
+            </section>
+
+
+            <section data-state="header45">
+                <style>
+                    .header45 header:after {
+                        content: "Service Mesh";
+                    }
+                </style>
+            </section>
+
+            <section data-state="header46">
+                <style>
+                    .header46 header:after {
+                        content: "Service Mesh";
+                    }
+                </style>
+            </section>
+
 
         </div>
     </div>
