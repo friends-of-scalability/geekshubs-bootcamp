@@ -1,6 +1,13 @@
-slides:
-    image: danidemi/docker-reveal.js:latest
-    volumes:
-        - ./:/slides/
-    ports:
-        - 8000:8000
+version: '3'
+services:
+    slides:
+        build: .
+        image: scalabilityrevealjs:latest
+        volumes:
+            - ./index.html/:/slides/index.html
+            - ./img/:/reveal.js/img
+            - ./css:/reveal.js/css
+
+
+        ports:
+            - 8000:8000
