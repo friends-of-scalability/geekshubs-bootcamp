@@ -7,7 +7,5 @@ services:
             - ./index.html/:/slides/index.html
             - ./img/:/reveal.js/img
             - ./css:/reveal.js/css
-
-
         ports:
             - 8000:8000
