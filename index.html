@@ -30,28 +30,22 @@
 <body>
 
     <div class="reveal">
-        <header style="position: absolute;top: 50px; left: 100px; z-index:500; font-size:100px;background-color: rgba(255, 255, 255, 0.149)"></header>
         <div class="slides">
 
-            <section data-state="header1">
-                <style>
-                    .header1 header:after {
-                        content: "Welcome to scalability 101";
-                    }
-                </style>
+            <section>
+                <h1>Welcome to scalability 101</h1>
+
 
             </section>
 
             <section>
 
-                <h2>Block 1: Introduction</h2>
+                <h1>Block 1: Introduction</h1>
             </section>
-            <section data-state="header2">
-                <style>
-                    .header2 header:after {
-                        content: "What is scalability?";
-                    }
-                </style>
+            <section>
+
+                <h2>What is scalability?</h2>
+
 
                 <div>
 
@@ -60,12 +54,10 @@
 
                 </div>
             </section>
-            <section data-state="header3">
-                <style>
-                    .header3 header:after {
-                        content: "Properties of a system";
-                    }
-                </style>
+            <section>
+
+                <h2>Properties of a system</h2>
+
                 <ul data-state="list1">
                     <style>
                         .list1 {
@@ -78,12 +70,10 @@
                 </ul>
             </section>
 
-            <section data-state="header4">
-                <style>
-                    .header4 header:after {
-                        content: "Types of systems";
-                    }
-                </style>
+            <section>
+
+                <h2>Types of systems</h2>
+
                 <ul>
                     <li>
                         Concurrent systems.
@@ -105,12 +95,10 @@
             </section>
 
 
-            <section data-state="header5">
-                <style>
-                    .header5 header:after {
-                        content: "Evolution of CPU processors.";
-                    }
-                </style>
+            <section>
+
+                <h2>Evolution of CPU processors.</h2>
+
                 <img data-src="img/cpucores.png" width="70%" />
 
                 <aside class="notes">
@@ -119,31 +107,25 @@
             </section>
 
 
-            <section data-state="header6">
-                <style>
-                    .header6 header:after {
-                        content: "Evolution of available RAM memory.";
-                    }
-                </style>
+            <section>
+
+                <h2>Evolution of available RAM memory.</h2>
+
                 <img data-src="img/RAMAvg.png" width="70%" />
             </section>
 
-            <section data-state="header7">
-                <style>
-                    .header7 header:after {
-                        content: "Evolution of Global IP traffic.";
-                    }
-                </style>
+            <section>
+
+                <h2>Evolution of Global IP traffic.</h2>
+
 
                 <img data-src="img/iptraffic.png" width="70%" />
             </section>
 
-            <section data-state="header8">
-                <style>
-                    .header8 header:after {
-                        content: "Where we deploy applications?";
-                    }
-                </style>
+            <section>
+
+                <h2>Where we deploy applications?</h2>
+
                 <ul>
                     <li>On premise, bare metal.</li>
                     <li>Public cloud, AWS</li>
@@ -157,12 +139,10 @@
                     Bare metal, we manage our own servers. The cloud. Someone somewhere gave us servers and services for deploying our applications. VM an emulated server Container a glorified processTM
                 </aside>
             </section>
-            <section data-state="header8-1">
-                <style>
-                    .header8-1 header:after {
-                        content: "Where we deploy applications?";
-                    }
-                </style>
+            <section>
+
+                <h2>Where we deploy applications?</h2>
+
                 <ul>
                     <li>Container orchestrator, Mesos/Marathon/DCOS</li>
                     <li>Container orchestrator, Kubernetes</li>
@@ -173,20 +153,16 @@
                     Bare metal, we manage our own servers. The cloud. Someone somewhere gave us servers and services for deploying our applications. VM an emulated server Container a glorified processTM
                 </aside>
             </section>
-            <section data-state="header9">
-                <style>
-                    .header9 header:after {
-                        content: "Cloud timeline";
-                    }
-                </style>
+            <section>
+
+                <h2>Cloud timeline</h2>
+
                 <img data-src="img/cloud_timeline.jpg" width="70%" />
             </section>
-            <section data-state="header10">
-                <style>
-                    .header10 header:after {
-                        content: "What we deploy?";
-                    }
-                </style>
+            <section>
+
+                <h2>What we deploy?</h2>
+
                 <ul>
                     <li>Virtual Machines. </li>
                     <li>Containers. </li>
@@ -196,20 +172,16 @@
                     We deploy either AMIs, containers or code in a serverless or heroku mode.
                 </aside>
             </section>
-            <section data-state="header11">
-                <style>
-                    .header11 header:after {
-                        content: "Digression: what is a container?";
-                    }
-                </style>
+            <section>
+
+                <h2>Digression: what is a container?</h2>
+
                 <img data-src="img/linux-container.png" width="70%" />
             </section>
-            <section data-state="header12">
-                <style>
-                    .header12 header:after {
-                        content: "How we deploy?";
-                    }
-                </style>
+            <section>
+
+                <h2>How we deploy?</h2>
+
                 <p><b><i>Snowflake servers</i></b>: an operator copies code in the server and install it and restart services manually. </p>
                 <p><b><i>With config management</i></b>: using config management tools like <i>Puppet</i>, <i>Ansible</i>, <i>SaltStack</i>, <i>Chef</i>, <i>Juju</i> we get PhoenixServers. </p>
                 <p><b><i>Using immutable infrastructure (golden image)</i></b>: we create an artifact that is never modified while being promoted or deployed between environments.</p>
@@ -217,21 +189,18 @@
                     Benefits of immutable infrastructure?
                 </aside>
             </section>
-            <section data-state="header13">
-                <style>
-                    .header13 header:after {
-                        content: "How we organize deployments??";
-                    }
+            <section>
+
+                <h2>How we organize deployments??</h2>
+
                 </style>
                 <p><b>Deployment day!</b>: after QA, a date is set and that date and time we do the deployment. </p>
                 <p><b>Continuous deployment/delivery</b>: there is an automated process (a pipeline) that fetch the source code from a commit event, builds it, test it and deploy it. </p>
             </section>
-            <section data-state="header14">
-                <style>
-                    .header14 header:after {
-                        content: "How we shift traffic?";
-                    }
-                </style>
+            <section>
+
+                <h2>How we shift traffic?</h2>
+
                 <ul>
                     <li>
                         <p><b>Highlander</b>: kill the old server first, then deploy the new one.</p>
@@ -241,12 +210,10 @@
                     </li>
                 </ul>
             </section>
-            <section data-state="header15">
-                <style>
-                    .header15 header:after {
-                        content: "How we shift traffic?";
-                    }
-                </style>
+            <section>
+
+                <h2>How we shift traffic?</h2>
+
                 <ul>
                     <li>
                         <p><b>Red/black or blue/green</b>: deploy a new server group with the new version, deregister old server group from loadbalancer and register new one. </p>
@@ -256,12 +223,10 @@
                     </li>
                 </ul>
             </section>
-            <section data-state="header16">
-                <style>
-                    .header16 header:after {
-                        content: "How we architecture applications?";
-                    }
-                </style>
+            <section>
+
+                <h2>How we architecture applications?</h2>
+
                 <ul>
                     <li>
                         <p><b>Monoliths</b>: The whole application is in the same codebase and in the same deployable unit. </p>
@@ -274,12 +239,10 @@
                 </ul>
                 <aside class="notes">Dont forget about elegant monolith! complexities for microservices!</aside>
             </section>
-            <section data-state="header16-1">
-                <style>
-                    .header16-1 header:after {
-                        content: "How we architecture applications?";
-                    }
-                </style>
+            <section>
+
+                <h2>How we architecture applications?</h2>
+
                 <ul>
 
                     <li>
@@ -289,12 +252,10 @@
                 </ul>
                 <aside class="notes">Dont forget about elegant monolith! complexities for microservices!</aside>
             </section>
-            <section data-state="header17">
-                <style>
-                    .header17 header:after {
-                        content: "How we do operations?";
-                    }
-                </style>
+            <section>
+
+                <h2>How we do operations?</h2>
+
                 <ul>
                     <li>
                         <p><b>Operations/Sysadmin team</b>: specialized team that handles operations, usually doing oncall shifts, tooling for development teams and deployments</p>
@@ -304,22 +265,18 @@
                     </li>
                 </ul>
             </section>
-            <section data-state="header18">
-                <style>
-                    .header18 header:after {
-                        content: "Welcome to FooBar enterprises";
-                    }
-                </style>
+            <section>
+
+                <h2>Welcome to FooBar enterprises</h2>
+
                 <p>You have been hired as CTO of this company and sole developer of the product.</p>
                 <p>The main product of the company is an url-shortener.</p>
                 <p>It's for now only an API, no frontend involved, it's expected to receive lots of traffic.</p>
             </section>
-            <section data-state="header19">
-                <style>
-                    .header19 header:after {
-                        content: "Our tech stack";
-                    }
-                </style>
+            <section>
+
+                <h2>Our tech stack</h2>
+
                 <p>Application written in golang.</p>
                 <p>Github for hosting code.</p>
                 <p>Cloudformation/Helm to capture infrastructure as code.</p>
@@ -329,32 +286,26 @@
                 <p>AWS as our production environment.</p>
             </section>
 
-            <section data-state="header20">
-                <style>
-                    .header20 header:after {
-                        content: "Our development process";
-                    }
-                </style>
+            <section>
+
+                <h2>Our development process</h2>
+
                 <img data-src="img/cicdpipeline.png" width="90%" />
             </section>
-            <section data-state="header21">
-                <style>
-                    .header21 header:after {
-                        content: "Github";
-                    }
-                </style>
+            <section>
+
+                <h2>Github</h2>
+
                 <ul>
                     <li>Github is our hosted version control system based on git.</li>
                     <li>Our project is open source and public, if you want to host git privately, you can set up your own git server or more commonly Github Enterprise, Bitbucket or Gitlab.</li>
                     <li>We made an organisation at Github named friendsofscalability, request access there!</li>
                 </ul>
             </section>
-            <section data-state="header22">
-                <style>
-                    .header22 header:after {
-                        content: "Jenkins";
-                    }
-                </style>
+            <section>
+
+                <h2>Jenkins</h2>
+
                 <ul>
 
                     <li>CI, continous integration is the practice of build the software on a clean environment to detect build flaws, do integration tests </li>
@@ -362,12 +313,10 @@
                     <li>In our case each commit will trigger a webhook that triggers a build on Jenkins of that commit. </li>
                 </ul>
             </section>
-            <section data-state="header22-2">
-                <style>
-                    .header22-2 header:after {
-                        content: "Jenkins";
-                    }
-                </style>
+            <section>
+
+                <h2>Jenkins</h2>
+
                 <ul>
 
                     <li>Alternatives: TravisCI, CircleCI, TeamCity, GoCD, <a href="https://en.wikipedia.org/wiki/Comparison_of_continuous_integration_software">check out this comparison ...</a> </li>
@@ -375,12 +324,10 @@
                     <li>Our jenkins server is at <a href="http://ci.geekshubs.friendsofscalability.com:8080/">http://ci.geekshubs.friendsofscalability.com:8080/</a></li>
                 </ul>
             </section>
-            <section data-state="header23">
-                <style>
-                    .header23 header:after {
-                        content: "Spinnaker";
-                    }
-                </style>
+            <section>
+
+                <h2>Spinnaker</h2>
+
                 <ul>
                     <li>Spinnaker is an open source, multi-cloud continuous delivery platform created by Netflix, with collaborations from Google, Pivotal and other companies.</li>
                     <li>The core of Spinnaker is the ability of creating pipelines.</li>
@@ -388,12 +335,10 @@
                     <li>Git -> Jenkins -> Spinnaker Pipeline. </li>
                 </ul>
             </section>
-            <section data-state="header23-2">
-                <style>
-                    .header23-2 header:after {
-                        content: "Spinnaker";
-                    }
-                </style>
+            <section>
+
+                <h2>Spinnaker</h2>
+
                 <ul>
                     <li>The pipeline could contain several steps but at least, tipically it will have a Bake step for creating the golden image for the application</li>
                     <li>And then a Deploy step, that will deploy this image over some cloud provider (AWS, GCP, Kubernetes)</li>
@@ -401,20 +346,16 @@
                 </ul>
             </section>
 
-            <section data-state="header24">
-                <style>
-                    .header24 header:after {
-                        content: "AWS";
-                    }
-                </style>
-                <img data-src="img/cloud_market.png" width="90%" />
+            <section>
+
+                <h2>AWS</h2>
+
+                <img data-src="img/cloud_market.png" width="80%" />
             </section>
-            <section data-state="header24">
-                <style>
-                    .header24 header:after {
-                        content: "AWS";
-                    }
-                </style>
+            <section>
+
+                <h2>AWS</h2>
+
                 <ul>
                     <li>In exchange for money, AWS will provide:</li>
                     <ul>
@@ -426,24 +367,20 @@
                     </ul>
                 </ul>
             </section>
-            <section data-state="header25">
-                <style>
-                    .header25 header:after {
-                        content: "Docker";
-                    }
-                </style>
+            <section>
+
+                <h2>Docker</h2>
+
                 <ul>
                     <li><i>Docker Inc</i> is the company that popularized container usage on 2013 with the docker tool.</li>
                     <li>The docker tool has been including more than just container runtime tools, things like swarm o machine</li>
                     <li>Docker now ships a free community edition docker-ce, an enterprise one docer-ee, and is also an open source project moby.</li>
                 </ul>
             </section>
-            <section data-state="header26">
-                <style>
-                    .header26 header:after {
-                        content: "Docker";
-                    }
-                </style>
+            <section>
+
+                <h2>Docker</h2>
+
                 <ul>
                     <li>The OCI initiative aims to a vendor free technology for containers.</li>
                     <ul>
@@ -456,12 +393,10 @@
                 </ul>
 
             </section>
-            <section data-state="header27">
-                <style>
-                    .header27 header:after {
-                        content: "Kubernetes";
-                    }
-                </style>
+            <section>
+
+                <h2>Kubernetes</h2>
+
                 <ul>
                     <li>Container orchestration at Scale, a project that covers running application on containers from end to end.</li>
                     <li>Started at Google, now under the CNCF Foundation, RedHat, CoreOS, Huawei and many other companies contribute to the project managed in the open.</li>
@@ -473,21 +408,17 @@
 
             </section>
 
-            <section data-state="header28">
-                <style>
-                    .header28 header:after {
-                        content: "Kubernetes architecture";
-                    }
-                </style>
+            <section>
+
+                <h2>Kubernetes architecture</h2>
+
                 <img data-src="img/Kubernetes-architecture-unixcloudfusion.png" width="90%" />
 
             </section>
-            <section data-state="header28">
-                <style>
-                    .header28 header:after {
-                        content: "Kubernetes basic concepts";
-                    }
-                </style>
+            <section>
+
+                <h2>Kubernetes basic concepts</h2>
+
                 <table>
                     <colgroup span="2"></colgroup>
 
@@ -506,12 +437,10 @@
 
                 </table>
             </section>
-            <section data-state="header29">
-                <style>
-                    .header29 header:after {
-                        content: "Kubernetes basic concepts";
-                    }
-                </style>
+            <section>
+
+                <h2>Kubernetes basic concepts</h2>
+
                 <table>
                     <colgroup span="2"></colgroup>
                     <tr>
@@ -528,12 +457,10 @@
                     </tr>
                 </table>
             </section>
-            <section data-state="header30">
-                <style>
-                    .header30 header:after {
-                        content: "Kubernetes basic concepts";
-                    }
-                </style>
+            <section>
+
+                <h2>Kubernetes basic concepts</h2>
+
                 <table>
                     <colgroup span="2"></colgroup>
                     <tr>
@@ -551,12 +478,10 @@
                     </tr>
                 </table>
             </section>
-            <section data-state="header31">
-                <style>
-                    .header31 header:after {
-                        content: "Kubernetes client interaction";
-                    }
-                </style>
+            <section>
+
+                <h2>Kubernetes client interaction</h2>
+
                 <ul>
                     <li>Every action is done via the Kubernetes API.</li>
                     <li>Kubernetes controllers follows the <i>Reconciler</i> pattern extensively!.</li>
@@ -564,12 +489,10 @@
                     <li>Each API object has a definition that could be written over YAML or JSON.</li>
                 </ul>
             </section>
-            <section data-state="header32">
-                <style>
-                    .header32 header:after {
-                        content: "kubectl cheat sheet";
-                    }
-                </style>
+            <section>
+
+                <h2>kubectl cheat sheet</h2>
+
                 <table>
                     <colgroup span="2"></colgroup>
                     <tr>
@@ -582,12 +505,10 @@
                     </tr>
                 </table>
             </section>
-            <section data-state="header33">
-                <style>
-                    .header33 header:after {
-                        content: "kubectl cheat sheet";
-                    }
-                </style>
+            <section>
+
+                <h2>kubectl cheat sheet</h2>
+
                 <table>
                     <colgroup span="2"></colgroup>
                     <tr>
@@ -602,57 +523,47 @@
                 </table>
             </section>
 
-            <section data-state="header34">
-                <style>
-                    .header34 header:after {
-                        content: "kubectl cheat sheet";
-                    }
-                </style>
+            <section>
+
+                <h2>kubectl cheat sheet</h2>
+
                 <p>The kubernetes documentation while not extremely updated, is well written and complete! Check it out the <a href="https://kubernetes.io/docs/reference/kubectl/overview/">kubectl one</a>. </p>
             </section>
-            <section data-state="header35">
-                <style>
-                    .header35 header:after {
-                        content: "Hands on";
-                    }
-                </style>
+            <section>
+
+                <h2>Hands on</h2>
+
                 <ul>
                     <li>It's time for you to finish our onboarding guide deploying our application.</li>
                 </ul>
             </section>
             <section>
-                <h2>Block 2: Scaling/Loadbalancing</h2>
+                <h1>Block 2: Scaling/Loadbalancing</h1>
             </section>
             <section>
                 <h2>What do you think about our current application?</h2>
             </section>
-            <section data-state="header36">
-                <style>
-                    .header36 header:after {
-                        content: "Sprint planning";
-                    }
-                </style>
+            <section>
+
+                <h2>Sprint planning</h2>
+
                 <ul>
                     <li>Set up autoscaling.</li>
                     <li>Set up loadbalancing.</li>
                     <li>Set up config management.</li>
                 </ul>
             </section>
-            <section data-state="header37">
-                <style>
-                    .header37 header:after {
-                        content: "Loadbalancing";
-                    }
-                </style>
+            <section>
+
+                <h2>Loadbalancing</h2>
+
                 <img data-src="img/middlelb.png" width="90%" />
                 <p style="font-size:14px"><a href="https://blog.envoyproxy.io/introduction-to-modern-network-load-balancing-and-proxying-a57f6ff80236">A summary from the excellent post from Matt Klein</a></p>
             </section>
-            <section data-state="header40">
-                <style>
-                    .header40 header:after {
-                        content: "Loadbalancing: benefits";
-                    }
-                </style>
+            <section>
+
+                <h2>Loadbalancing: benefits</h2>
+
                 <table>
                     <thead>Loadbalancer benefits:</thead>
                     <colgroup span="2"></colgroup>
@@ -671,12 +582,10 @@
 
                 </table>
             </section>
-            <section data-state="header38">
-                <style>
-                    .header38 header:after {
-                        content: "Loadbalancing";
-                    }
-                </style>
+            <section>
+
+                <h2>Loadbalancing</h2>
+
                 <table>
                     <thead>Loadbalancer classes by OSI layer.</thead>
                     <colgroup span="2"></colgroup>
@@ -690,12 +599,10 @@
                     </tr>
                 </table>
             </section>
-            <section data-state="header41">
-                <style>
-                    .header41 header:after {
-                        content: "Loadbalancing: classes";
-                    }
-                </style>
+            <section>
+
+                <h2>Loadbalancing: classes</h2>
+
                 <table>
                     <thead>Loadbalancer classes:</thead>
                     <colgroup span="2"></colgroup>
@@ -711,12 +618,10 @@
 
                 </table>
             </section>
-            <section data-state="header42">
-                <style>
-                    .header42 header:after {
-                        content: "Loadbalancing: classes";
-                    }
-                </style>
+            <section>
+
+                <h2>Loadbalancing: classes</h2>
+
                 <table>
                     <thead>Loadbalancer classes:</thead>
                     <colgroup span="2"></colgroup>
@@ -730,12 +635,10 @@
                     </tr>
                 </table>
             </section>
-            <section data-state="header43">
-                <style>
-                    .header43 header:after {
-                        content: "L7 Loadbalancers: typical features";
-                    }
-                </style>
+            <section>
+
+                <h2>L7 Loadbalancers: typical features</h2>
+
                 <ul>
                     <li>Service discovery</li>
                     <li>Health checking</li>
@@ -748,12 +651,10 @@
                     </li>
                 </ul>
             </section>
-            <section data-state="header43">
-                <style>
-                    .header43 header:after {
-                        content: "Loadbalancing algorithms";
-                    }
-                </style>
+            <section>
+
+                <h2>Loadbalancing algorithms</h2>
+
                 <ul>
                     <li>Round Robin</li>
                     <li>IP:hash</li>
@@ -762,45 +663,37 @@
                     <li>Weighted Round Robin, Weighted least conn</li>
                 </ul>
             </section>
-            <section data-state="header43">
-                <style>
-                    .header43 header:after {
-                        content: "Loadbalancing takeaways";
-                    }
-                </style>
+            <section>
+
+                <h2>Loadbalancing takeaways</h2>
+
                 <ul>
                     <li>Networking devices are moving from dedicated hardware to sofware run on commodity software</li>
                     <li>Container and some microservices architectures are moving towards the service mesh pattern. </li>
                 </ul>
             </section>
 
-            <section data-state="header44">
-                <style>
-                    .header44 header:after {
-                        content: "Service Mesh or sidecar proxy";
-                    }
-                </style>
+            <section>
+
+                <h2>Service Mesh or sidecar proxy</h2>
+
                 <img data-src="img/servicemesh.png" width="60%" />
 
             </section>
 
 
-            <section data-state="header45">
-                <style>
-                    .header45 header:after {
-                        content: "Service Mesh: control plane";
-                    }
-                </style>
+            <section>
+
+                <h2>Service Mesh: control plane</h2>
+
                 <img data-src="img/servicemeshcontrolplane.png" width="90%" />
 
             </section>
 
-            <section data-state="header46">
-                <style>
-                    .header46 header:after {
-                        content: "Service Mesh implementations";
-                    }
-                </style>
+            <section>
+
+                <h2>Service Mesh implementations</h2>
+
                 <table>
                     <colgroup span="3"></colgroup>
                     <tr>
@@ -822,21 +715,17 @@
             </section>
 
 
-            <section data-state="header47">
-                <style>
-                    .header47 header:after {
-                        content: "How Istio works";
-                    }
-                </style>
+            <section>
+
+                <h2>How Istio works</h2>
+
                 <img data-src="img/howistioworks.jpg" width="90%" />
 
             </section>
-            <section data-state="header48">
-                <style>
-                    .header48 header:after {
-                        content: "Edge loadbalancers at scale";
-                    }
-                </style>
+            <section>
+
+                <h2>Edge loadbalancers at scale</h2>
+
                 <img data-src="img/lbhabgp.png" width="90%" />
                 <ul>
                     <li><a href="https://static.googleusercontent.com/media/research.google.com/en//pubs/archive/44824.pdf">Maglev</a> from Google.</li>
@@ -845,12 +734,10 @@
                 </ul>
 
             </section>
-            <section data-state="header49">
-                <style>
-                    .header49 header:after {
-                        content: "Handling overload";
-                    }
-                </style>
+            <section>
+
+                <h2>Handling overload</h2>
+
                 <ul>
                     <li>Load shedding by criticality.</li>
                     <li>Graceful degration.</li>
@@ -859,21 +746,17 @@
                     <li>Client retries.</li>
                 </ul>
             </section>
-            <section data-state="header50">
-                <style>
-                    .header50 header:after {
-                        content: "Handling overload";
-                    }
-                </style>
+            <section>
+
+                <h2>Handling overload</h2>
+
                 <img data-src="img/4-worker-utilization-load-shedder.svg" width="80%" />
             </section>
 
-            <section data-state="header51">
-                <style>
-                    .header51 header:after {
-                        content: "Autoscaling";
-                    }
-                </style>
+            <section>
+
+                <h2>Autoscaling</h2>
+
                 <p>What is autoscaling?</p>
                 <table>
                     <colgroup span="2" />
@@ -886,12 +769,10 @@
                 </table>
             </section>
 
-            <section data-state="header51">
-                <style>
-                    .header51 header:after {
-                        content: "Autoscaling";
-                    }
-                </style>
+            <section>
+
+                <h2>Autoscaling</h2>
+
                 <table>
                     <colgroup span="2" />
                     <tr>
@@ -901,15 +782,264 @@
                     </tr>
                 </table>
             </section>
-            <section data-state="header52">
-                <style>
-                    .header52 header:after {
-                        content: "AutoscalingGroup";
-                    }
-                </style>
-                <img data-src="img/as-basic-diagram.png" width="60%" />
+            <section>
+
+                <h2>AutoscalingGroup</h2>
+                <ul>
+                    <li>There is always a min capacity and a maximum capacity.</li>
+                    <li>Autoscaling will determine if desired capacity will increase or decrease.</li>
+                    <li>The logic that dictates that are called scaling policies.</li>
+
+
+                </ul>
+
+
 
             </section>
+            <section>
+
+                <h2>AutoscalingGroup</h2>
+
+                <p style="text-align: center;"><img data-src="img/as-basic-diagram.png" width="60%" style="margin: 0 auto;" /></p>
+
+
+            </section>
+            <section>
+
+                <h2>Scaling policies: simple</h2>
+                <ul>
+                    <li>You configure an alarm following that triggers when a metric (CPU/Memory/Requests/Messages in queue) pass a threshold.</li>
+                    <li>The alarm will trigger an add capacity action (scale up) or reduce capacity action (scale down).</li>
+                    <li>There is a cooldown to give enough time to get metrics and reevaluate.</li>
+                </ul>
+            </section>
+            <section>
+
+                <h2>Setting metrics for autoscaling</h2>
+                <ul>
+                    <li>In AWS, could be anything that triggers the Autoscaling API but Cloudwatch is the default method.</li>
+                    <li>In Kubernetes, you get metrics from heapster (
+                        <1.9) or from metricsServer (1.9+).</li>
+
+                </ul>
+            </section>
+            <section>
+
+                <h2>You can always do complex things.</h2>
+                <p>Predictive AutoScaling. Use your data to predict your scaling needs.</p>
+
+                <p style="text-align: center;"><img data-src="img/scryer.png" width="30%" style="margin: auto auto;" /></p>
+            </section>
+            <section>
+
+                <h2>Scaling patterns.</h2>
+                <p style="text-align: center;"><img data-src="img/autoscaling_patterns.jpg" width="60%" style="margin: auto auto;" /></p>
+            </section>
+
+            <section>
+
+                <h2>Scaling mantra</h2>
+                <b style="font-size:2em;">Scale up quickly, scale down slowly.</b>
+            </section>
+            <section>
+                <h2>Writing scalable applications</h2>
+                <p>As a "general" guide follow the 12-factor approach.</p>
+                <p><i>Trendiness</i> now calls them <i>cloud native</i> applications, however the underlying principles remains the same.</p>
+                <p>The 12 factor app manifesto was developed by Heroku circa 2011.</p>
+            </section>
+            <section>
+                <h2>12 Factor apps</h2>
+                <table>
+                    <colgroup span="2"></colgroup>
+                    <tr>
+                        <td>I. Codebase</td>
+                        <td> One codebase tracked in revision control, many deploys</td>
+                    </tr>
+                    <tr>
+                        <td> II. Dependencies</td>
+                        <td> Explicitly declare and isolate dependencies</td>
+                    </tr>
+                    <tr>
+                        <td>III. Config Store</td>
+                        <td>config in the environment</td>
+                    </tr>
+                    <tr>
+                        <td>IV. Backing services</td>
+                        <td>Treat backing services as attached resources</td>
+                    </tr>
+                    <tr>
+                        <td>V. Build, release, run</td>
+                        <td>Strictly separate build and run stages</td>
+
+                    </tr>
+                </table>
+            </section>
+            <section>
+                <h2>12 Factor apps</h2>
+                <table>
+                    <colgroup span="2"></colgroup>
+                    <tr>
+
+                        <td>VI. Processes</td>
+                        <td>Execute the app as one or more stateless processes</td>
+                    </tr>
+                    <tr>
+                        <td>VII. Port binding</td>
+                        <td>Export services via port binding</td>
+                    </tr>
+                    <tr>
+                        <td>VIII. Concurrency </td>
+                        <td>Scale out via the process model</td>
+                    </tr>
+                    <tr>
+                        <td> IX. Disposability</td>
+                        <td>Maximize robustness with fast startup and graceful shutdown</td>
+                    </tr>
+
+
+                    </tr>
+                </table>
+            </section>
+            <section>
+                <h2>12 Factor apps</h2>
+                <table>
+                    <colgroup span="2"></colgroup>
+                    <tr>
+                        <td>X. Dev/prod parity</td>
+                        <td>Keep development, staging, and production as similar as possible</td>
+                    </tr>
+                    <tr>
+                        <td>XI. Logs</td>
+                        <td>Treat logs as event streams</td>
+                    </tr>
+                    <tr>
+                        <td>XII. Admin processes</td>
+                        <td> Run admin/management tasks as one-off processes</td>
+                    </tr>
+
+                    </tr>
+                </table>
+            </section>
+            <section>
+                <h2>Scaling the DB</h2>
+                <ul>
+                    <li><b>Follower/leader approach (asynchronous replication)</b></li>
+                    <li><b>Multileader</b></li>
+                    <li><b>Equal nodes (there are no leaders).</b></li>
+                    <li>NoSQL, NewSQL or Relational?</li>
+                    <li>(Event) Queues.</li>
+                </ul>
+            </section>
+
+            <section>
+                <h2>Follower/Leader approach</h2>
+                <ul>
+                    <li>Writes goes to leader, leader keeps state over WAL, journal...</li>
+                    <li>Leader updates journal entries to followers, followers reconstruct the state from journal.</li>
+                    <li>Follower have the state delayed by N seconds, where N >=0, if N is big enough the follower would stop the replication.</li>
+                    <li>to scale the storage, is usual to create several follower/leaders clusters with a shard of the data and one follower/leader cluster that holds the sharding data.</li>
+                    <li><b>Open question:</b> What happens when leader goes down?</li>
+                </ul>
+            </section>
+
+            <section>
+                <h2>Equal nodes (there are no leaders)</h2>
+                <ul>
+                    <li>All the nodes are equal, there are no leader nodes.</li>
+                    <li>If the client can connect to one node it would receive the nodes list it can connect.</li>
+                    <li>Data is sharded and replicated between the nodes of the cluster. </li>
+                </ul>
+            </section>
+            <section>
+                <h2>Multileader</h2>
+                <ul>
+                    <li>Some traditional relational databases or engines provides multileader capabilities.</li>
+                    <li>This is achieved through <i>synchronous</i> replication</li>
+                    <li><b>Open question:</b> How conflicts are solved?</li>
+                    <li>If one of the multiple leaders goes down what happens?</li>
+                </ul>
+            </section>
+            <section>
+                <h2>(Event) Queues</h2>
+                <ul>
+                    <li>A tipical evolution of microservices architecture.</li>
+                    <li>State is persisted on a shared queue, the event queue.</li>
+                    <li>The queue is another database, and needs to be scaled.</li>
+                    <li>Scale is really sensitive to read/writes throughput and operational excellence of the team.</li>
+                </ul>
+            </section>
+            <section>
+                <h2>NoSQL, NewSQL or SQL</h2>
+                <p>What are the differences?</p>
+            </section>
+            <section>
+                <h2>CAP theorem</h2>
+                <p style="text-align: center;"><img data-src="img/CAP-overview.png" width="60%" style="margin: auto auto;" /></p>
+                <p style="font-size:14px">Images taken from this good article by Robert Greiner <a href="http://robertgreiner.com/2014/08/cap-theorem-revisited/">here</a></p>
+
+            </section>
+            <section>
+                <h2>CAP theorem: CP</h2>
+                <p style="text-align: center;"><img data-src="img/CAP-CP.png" width="60%" style="margin: auto auto;" /></p>
+                <p style="font-size:14px">Images taken from this good article by Robert Greiner <a href="http://robertgreiner.com/2014/08/cap-theorem-revisited/">here</a></p>
+
+            </section>
+            <section>
+                <h2>CAP theorem: AP</h2>
+                <p style="text-align: center;"><img data-src="img/CAP-AP.png" width="60%" style="margin: auto auto;" /></p>
+                <p style="font-size:14px">Images taken from this good article by Robert Greiner <a href="http://robertgreiner.com/2014/08/cap-theorem-revisited/">here</a></p>
+
+            </section>
+
+            <section>
+                <h2>CAP theorem, a modern approach</h2>
+                <p style="text-align: center;"><img data-src="img/CAP-critique.bmp" width="60%" style="margin: auto auto;" /></p>
+                <p style="font-size:14px">Image extracted from a really interesting <a href="https://arxiv.org/pdf/1509.05393.pdf
+                    ">arxiv article</a></p>
+                <aside class="notes">
+                    In concurrent programming, an operation (or set of operations) is atomic, linearizable, indivisible or uninterruptible if it appears to the rest of the system to occur at once without being interrupted. Atomicity is a guarantee of isolation from interrupts,
+                    signals, concurrent processes and threads. It is relevant for thread safety and reentrancy. Additionally, atomic operations commonly have a succeed-or-fail definition—they either successfully change the state of the system, or have
+                    no apparent effect. A write to a variable does not have to be seen instantaneously, however, writes to variables by different processors have to be seen in the same order by all processors. Causal consistency is a weakening model of
+                    sequential consistency by categorizing events into those causally related and those that are not. It defines that only write operations that are causally related need to be seen in the same order by all processes.
+                </aside>
+            </section>
+            <section>
+
+                <h2>Database mantra</h2>
+                <ul>
+                    <li>Maintaining state is hard and a high maintenance operation, avoid it if you can.</b>
+                    </li>
+                    <li>You need to understand the consistency and operating models of the database you have chosen.</li>
+                </ul>
+            </section>
+
+
+            <section>
+                <h3>You have read a lot of reddits and subreddits, what about some coding?</h3>
+            </section>
+            <section>
+                <h2>Are we ready for production, now?</h2>
+            </section>
+            <section>
+
+                <h2>Retrospective actions.</h2>
+
+                <ul>
+                    <li>Create new clusters of applications specialized by requests.</li>
+                    <li>Set up service discovery.</li>
+                    <li>Set up circuit breakers.</li>
+                </ul>
+            </section>
+            <section>
+
+                <h2>Service discovery</h2>
+                <p>What is service discovery?</p>
+
+            </section>
+
+
+
+
         </div>
     </div>
 
