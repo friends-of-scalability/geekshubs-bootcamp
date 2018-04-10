@@ -1034,6 +1034,218 @@
 
                 <h2>Service discovery</h2>
                 <p>What is service discovery?</p>
+                <ul>
+                    <li>Hey, we talked about this in the loadbalancer part.</li>
+                    <li>Nginx/server and an autoscaling service.</li>
+                </ul>
+
+            </section>
+
+            <section>
+
+                <h2>Service discovery: Usual suspects</h2>
+                <table>
+                    <colgroup span="2"></colgroup>
+                    <tr>
+                        <td>ZooKeeper from Apache</td>
+                        <td>Library clients</td>
+                    </tr>
+                    <tr>
+                        <td>Eureka from Netflix</td>
+                        <td>HTTP API</td>
+                    </tr>
+
+                    <tr>
+                        <td>Etcd from CoreOS</td>
+                        <td>HTTP / gRPC API</td>
+                    </tr>
+                    <tr>
+                        <td>Consul from Hashicorp</td>
+                        <td>HTTP API</td>
+                    </tr>
+                    <tr>
+                        <td>DNS SRV records</td>
+                        <td>DNS clients</td>
+                    </tr>
+
+
+                </table>
+            </section>
+            <section>
+
+                <h2>Service discovery</h2>
+                <ul>
+                    <li>They are basically distributed databases. Remember CAP theorem?</li>
+                    <li>Some of these databases are tuned for consistency (etcd,consul,ZooKeeper) others for availability (DNS, Eureka)</li>
+
+                    <li>Consistency is not extremely important as long the result contains some live nodes.</li>
+                    <li>The client should query the service discovery, ant then loadbalance from the result.</li>
+                    <li>Client tipically cache the result, so even if the service discovery is down some request could make progress.</li>
+                </ul>
+            </section>
+
+            <section>
+
+                <h2>Service discovery: usual client implementations.</h2>
+                <ul>
+                    <li>Client side loadbalancing library like Ribbon from netflix, Finagle from Twitter and many others..</li>
+                    <li>Fetch and <a href="https://github.com/gliderlabs/registrator">service restart</a> (not recommended) </li>
+                    <li>Delegate to the service mesh.</li>
+                </ul>
+            </section>
+
+            <section>
+
+                <h2>Service discovery: DNS SRV</h2>
+                <p style="font-size: 2em">Why DNS SRV is a bad idea?</p>
+            </section>
+            <section>
+
+                <h2>Service brokers: one step more</h2>
+                <ul>
+                    <li><b>Service discovery</b>: knowing the service we want to use we will get the servers that provide it.</li>
+                    <li><b>Service catalog</b>: Listing all services in a queryable catalog that exposes which services provides.</li>
+                    <li><b>Service brokers</b>: using a <a href="https://github.com/openservicebrokerapi/servicebroker">(https://github.com/openservicebrokerapi/servicebroker)</a> Broker API, applications could discover and use services described in the catalog.</li>
+
+
+                </ul>
+            </section>
+
+            <section>
+                <h2>Circuit breakers pattern</h2>
+                <ul>
+                    <li>Via service discovery we obtain a list of servers.</li>
+                    <li>We balance requests between servers.</li>
+                    <li>What happens if one of the backends is unhealthy?</li>
+                    <li>We should retry the request with another backend if possible.</li>
+                    <li>What happens if each backend is down?</li>
+                    <li>When is safe to start to using backends again?</li>
+                </ul>
+            </section>
+            <section>
+                <h2>Circuit breakers</h2>
+                <img data-src="img/circuit-breaker-state1.png" width="70%" />
+            </section>
+            <section>
+                <h2>Circuit breakers: implementations</h2>
+                <ul>
+                    <li>Hystrix, for Java by Netflix and ported to some other languages by the community.</li>
+                    <li>Finagle, for Java/Scala by Twitter.</li>
+                    <li>gobreaker, for Go by Sony.</li>
+                </ul>
+            </section>
+
+            <section>
+
+                <h2>Digression: The consensus problem</h2>
+                <p>Some of the service discovery implementations uses underneath a distributed consensus algorithm.</p>
+                <p>Reaching agreement is a fundamental problem in distributed computing.</p>
+                <p>Most known implementation is Paxos algorithm, an algorithm to reach consensus in a distributed system with network faults.</p>
+                <p>Another one is Raft, which claims to be a simplified and more efficient version of Paxos with the same guarantees.</p>
+            </section>
+
+
+            <section>
+
+                <h2>Digression: The consensus problem</h2>
+                <p style="font-size:2em;">Did you visited <a href="http://thesecretlivesofdata.com/raft/">http://thesecretlivesofdata.com/raft/</a> already?</p>
+
+            </section>
+            <section>
+                <h3>Talk is cheap, show me the code.</h3>
+            </section>
+            <section>
+
+                <h2>Performance review.</h2>
+
+                <ul>
+                    <li>We have improved resiliency, what is left to do?.</li>
+                    <li>We need more insights about what is happening.</li>
+                    <li>Set up metrics and tracing.</li>
+                    <li>Embrace failure: Chaos Engineering.</li>
+                </ul>
+            </section>
+            <section>
+                <h2>Observability</h2>
+                <p><q>An observable system is one that exposes enough data about itself so that generating information (finding answers to questions yet to be formulated) and easily accessing this information becomes simple.
+                </q>
+                </p>
+                <p style="font-size:14px"><a href="https://medium.com/@copyconstruct/monitoring-in-the-time-of-cloud-native-c87c7a5bfa3e">A summary from the excellent post from Cindy Sridharan</a></p>
+
+            </section>
+            <section>
+                <h2>Observability</h2>
+                <img data-src="img/monitoringinstrumentation.png" width="70%" />
+            </section>
+            <section>
+                <h2>Black box vs White Box</h2>
+                <img data-src="img/blackboxvswhitebox.png" width="70%" />
+            </section>
+
+            <section>
+                <h2>Monitoring vs observability</h2>
+                <img data-src="img/monitoringvsobservability.png" width="70%" />
+            </section>
+            <section>
+                <h2>Monitoring vs observability</h2>
+                <img data-src="img/monitoringopsvsdev.png" width="70%" />
+            </section>
+            <section>
+                <h2>Monitoring vs observability</h2>
+                <img data-src="img/obssymptomvscause.png" width="70%" />
+            </section>
+
+            <section>
+                <h2>The three main observability artifacts</h2>
+                <ul>
+                    <li>logs</li>
+                    <li>traces</li>
+                    <li>metrics</li>
+                </ul>
+
+            </section>
+            <section>
+                <h2>Logs</h2>
+                <p>A log is an immutable record of discrete events that happened over time on plaintext, structured or binary format.</p>
+                <p style="text-align: center"><img data-src="img/logs.png" width="50%" /></p>
+
+            </section>
+            <section>
+                <h2>Traces</h2>
+                <p>A trace is a representation of a series of causally-related distributed events that encode the end-to-end request flow through a distributed system.</p>
+                <p style="text-align: center"><img data-src="img/traces.png" width="50%" /></p>
+
+            </section>
+
+            <section>
+                <h2>Metrics</h2>
+                <p>A list of numbers relating to a particular activity, which is recorded at regular periods of time and then studied.</p>
+                <p style="text-align: center"><img data-src="img/metricprometheus.png" width="50%" /></p>
+            </section>
+            <section>
+                <h2>A comparison between logs, metrics and traces.</h2>
+                <ul>
+                    <li>Logs are easy to generate, but costly to process and store.</li>
+                    <li>Hard to get information from logs due to the log volume.</li>
+                    <li>Metrics processing and storage has a constant overhead.</li>
+                    <li>Metrics are also better suited to trigger alerts</li>
+                    <li>For tracing to be truly effective, every component in the path of a request needs to be modified to propagate tracing information</li>
+
+                </ul>
+            </section>
+            <section>
+                <h2>Observality phases</h2>
+                <p style="text-align: center"><img data-src="img/monitoringapriori.png" width="50%" /></p>
+
+            </section>
+            <section>
+                <h2>Alerting guidelines</h2>
+                <ul>
+                    <li>Every time my pager goes off, I should be able to react with a sense of urgency. I can only do this a few times a day before I get fatigued.</li>
+                    <li>Every page should be actionable; simply noting "this paged again" is not an action.</li>
+                    <li>Every page should require intelligence to deal with: no robotic, scriptable responses.</li>
+                </ul>
+                <p style="font-size:14px"><a href="https://docs.google.com/document/d/199PqyG3UsyXlwieHaqbGiWVa8eMWi8zzAn0YfcApr8Q/edit#">From My Philosophy on Alerting</a></p>
 
             </section>
 
