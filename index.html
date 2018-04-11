@@ -1249,9 +1249,115 @@
 
             </section>
 
+            <section>
+                <h2>Observality tooling</h2>
+                <ul>
+                    <li>Logs.
+                        <ul>
+                            <li>ELK (ElasticSearch, Logstash, Kibana).</li>
+                            <li>EFK (ElasticSearch, Fluentd, Kibana).</li>
+                            <li>Graylog, rsyslog</li>
+                            <li>SaaS (Splunk, Sumologic).</li>
+                        </ul>
+                    </li>
+                </ul>
+
+            </section>
+            <section>
+                <h2>Observality tooling</h2>
+                <ul>
+                    <li>Metrics.
+                        <ul>
+                            <li>Nagios / Icinga / Sensu.</li>
+                            <li>Graphite</li>
+                            <li>Prometheus / InfluxDB </li>
+                        </ul>
+                    </li>
+                </ul>
+
+            </section>
+            <section>
+                <h2>Observality tooling</h2>
+                <ul>
+                    <li>Tracing.
+                        <ul>
+                            <li>Zipkin.</li>
+                            <li>Opentracing</li>
+                            <li>Jaeger </li>
+                        </ul>
+                    </li>
+                </ul>
+
+            </section>
+            <section>
+                <h2>Chaos Engineering</h2>
+                <ol>
+                    <li>Start by defining ‘steady state’ as some measurable output of a system that indicates normal behavior.</li>
+                    <li>Hypothesize that this steady state will continue in both the control group and the experimental group.</li>
+                    <li>Introduce variables that reflect real world events like servers that crash, hard drives that malfunction, network connections that are severed, etc.</li>
+                    <li>Try to disprove the hypothesis by looking for a difference in steady state between the control group and the experimental group.</li>
+                </ol>
 
 
+            </section>
+            <section>
+                <h2>Chaos Engineering</h2>
+                <ul>
+                    <li><b>Chaos</b> doesn't mean random, means disturbance.</li>
+                    <li>It's need to be done in production, since traffic and behaviour could differ.</li>
+                    <li>Do it with a service you have enough confidence first,<b>don't harm the user.</b>.</li>
+                    <li>You need a mechanism to copy or divert some percentage of the traffic.</li>
+                </ul>
+            </section>
+            <section>
+                <h2>Chaos Engineering</h2>
+                <ul>
+                    <li><b>Chaos</b> doesn't mean random, means disturbance.</li>
+                    <li>It's need to be done in production, since traffic and behaviour could differ.</li>
+                    <li>Do it with a service you have enough confidence first, <b>don't harm the user.</b>.</li>
+                    <li>You need a mechanism to copy or divert some percentage of the traffic.</li>
+                </ul>
+            </section>
+            <section>
+                <h2>Chaos Engineering: tooling</h2>
+                <table>
+                    <colgroup span="2"></colgroup>
+                    <tr>
+                        <td><img data-src="img/netflix_chaos_monkey.jpg" width="60%" /></td>
+                        <td><img data-src="img/chaos_kong.png" width="250%" /></td>
 
+                    </tr>
+                </table>
+            </section>
+            <section>
+                <h3>Go back to coding, this idea will make you appear on the first page of HackerNews.</h3>
+            </section>
+            <section>
+                <h3>This was fun, what's left? What do you think you can do to improve the setup?</h3>
+            </section>
+            <section>
+                <h2>Extra ball: Incident management</h2>
+                <ul>
+                    <li>Define an incident management framework.</li>
+                    <li>Create a physical or virtual warroom where people involved on the incident can work isolated</li>
+                    <li>Appoint an incident commander, which will hold the high state of the incident, an operatinal lead and if needed a communication lead.</li>
+                    <li>Create a Live Incident Document where people can follow the state of the incident and write down hypothesys</li>
+                    <li>Don't close the incident when is fixed, it's time for postmortem</li>
+
+                </ul>
+            </section>
+            <section>
+                <h2>Post mortem</h2>
+                <ul>
+                    <li>The objective of the postmortem is to learn why it failed and how to improve, forgot about the who and the blame.</li>
+                    <li>The postmortem will probably generate follow-up tasks, don't close the incident until these tasks are done.</li>
+                    <li>Hosting a postmortem is an excellent way of learning, invite people from the organisation.</li>
+                </ul>
+            </section>
+
+            <section>
+                <h2>Being on call</h2>
+            </section>
         </div>
     </div>
 
