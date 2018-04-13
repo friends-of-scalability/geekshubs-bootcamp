@@ -39,12 +39,6 @@
             </section>
             <section>
                 <h1>Who are we?</h1>
-
-                <h2>Fabián Sellés</h2>
-                <img data-src="" />
-            </section>
-            <section>
-                <h1>Who are we?</h1>
                 <img style="float:right; height: 400px;" src="img/paella-vicent.jpg" />
                 <h2>Vicent Soria</h2>
                 <ul>
@@ -53,6 +47,17 @@
                     <li>Home brewer</li>
                     <li>Home baker</li>
                 </ul>
+            </section>
+            <section>
+                <h1>Who are we?</h1>
+
+                <h2>Fabián Sellés</h2>
+                <ul>
+                    <li>I'm from Cadiz but i survive in Catalonia.</li>
+                    <li>I have currently 9 Rapsberry pis (and one beaglebone).</li>
+                    <li>I can assure you that Vicent does beer and bread.</li>
+                </ul>
+                <img data-src="img/fabian.jpeg" />
             </section>
             <section>
 
@@ -995,7 +1000,8 @@
                     <li></li>
                 </ul>
                 <aside class="notes">
-                    <p>The twelve-factor app stores config in environment variables (often shortened to env vars or env). Env vars are easy to change between deploys without changing any code; unlike config files, there is little chance of them being checked into the code repo accidentally; and unlike custom config files, or other config mechanisms such as Java System Properties, they are a language- and OS-agnostic standard.</p>
+                    <p>The twelve-factor app stores config in environment variables (often shortened to env vars or env). Env vars are easy to change between deploys without changing any code; unlike config files, there is little chance of them being checked
+                        into the code repo accidentally; and unlike custom config files, or other config mechanisms such as Java System Properties, they are a language- and OS-agnostic standard.</p>
                 </aside>
             </section>
             <section>
@@ -1009,8 +1015,10 @@
                 </ul>
                 <aside class="notes">
                     <p>The code for a twelve-factor app makes no distinction between local and third party services.</p>
-                    <p>To the app, both are attached resources, accessed via a URL or other locator/credentials stored in the config. A deploy of the twelve-factor app should be able to swap out a local MySQL database with one managed by a third party (such as Amazon RDS) without any changes to the app’s code.</p>
-                    <p>Each distinct backing service is a resource. For example, a MySQL database is a resource; two MySQL databases (used for sharding at the application layer) qualify as two distinct resources. The twelve-factor app treats these databases as attached resources, which indicates their loose coupling to the deploy they are attached to.</p>
+                    <p>To the app, both are attached resources, accessed via a URL or other locator/credentials stored in the config. A deploy of the twelve-factor app should be able to swap out a local MySQL database with one managed by a third party (such
+                        as Amazon RDS) without any changes to the app’s code.</p>
+                    <p>Each distinct backing service is a resource. For example, a MySQL database is a resource; two MySQL databases (used for sharding at the application layer) qualify as two distinct resources. The twelve-factor app treats these databases
+                        as attached resources, which indicates their loose coupling to the deploy they are attached to.</p>
                 </aside>
             </section>
             <section>
@@ -1024,7 +1032,8 @@
                 <img src="img/release.png" />
                 <aside class="notes">
                     <p>The twelve-factor app uses strict separation between the build, release, and run stages. For example, it is impossible to make changes to the code at runtime, since there is no way to propagate those changes back to the build stage.</p>
-                    <p>Every release should always have a unique release ID, such as a timestamp of the release (such as 2011-04-06-20:32:17) or an incrementing number (such as v100). Releases are an append-only ledger and a release cannot be mutated once it is created. Any change must create a new release.</p>
+                    <p>Every release should always have a unique release ID, such as a timestamp of the release (such as 2011-04-06-20:32:17) or an incrementing number (such as v100). Releases are an append-only ledger and a release cannot be mutated once
+                        it is created. Any change must create a new release.</p>
                 </aside>
             </section>
             <section>
@@ -1039,7 +1048,9 @@
                     <p>Asset packagers in build stage</p>
                     <p>Sticky sessions are a violation of twelve-factor and should never be used or relied upon.</p>
                     <p>The memory space or filesystem of the process can be used as a brief, single-transaction cache. For example, downloading a large file, operating on it, and storing the results of the operation in the database.</p>
-                    <p>The twelve-factor app never assumes that anything cached in memory or on disk will be available on a future request or job – with many processes of each type running, chances are high that a future request will be served by a different process.</p>
+                    <p>The twelve-factor app never assumes that anything cached in memory or on disk will be available on a future request or job – with many processes of each type running, chances are high that a future request will be served by a different
+                        process.
+                    </p>
                 </aside>
             </section>
             <section>
@@ -1050,19 +1061,23 @@
                     <li>Java apps inside Tomcat.</li>
                 </ul>
                 <aside class="notes">
-                    <p>The twelve-factor app is completely self-contained and does not rely on runtime injection of a webserver into the execution environment to create a web-facing service. The web app exports HTTP as a service by binding to a port, and listening to requests coming in on that port.</p>
-                    <p>HTTP is not the only service that can be exported by port binding. Nearly any kind of server software can be run via a process binding to a port and awaiting incoming requests. Examples include ejabberd (speaking XMPP), and Redis (speaking the Redis protocol).</p>
+                    <p>The twelve-factor app is completely self-contained and does not rely on runtime injection of a webserver into the execution environment to create a web-facing service. The web app exports HTTP as a service by binding to a port, and
+                        listening to requests coming in on that port.</p>
+                    <p>HTTP is not the only service that can be exported by port binding. Nearly any kind of server software can be run via a process binding to a port and awaiting incoming requests. Examples include ejabberd (speaking XMPP), and Redis (speaking
+                        the Redis protocol).</p>
                     <p>The port-binding approach means that one app can become the backing service (resource) for another app</p>
                 </aside>
             </section>
             <section>
                 <h2>VIII. Concurrency</h2>
                 <p>In the twelve-factor app, processes are a first class citizen.</p>
-                <img src="img/process-types.png"/>
+                <img src="img/process-types.png" />
                 <aside class="notes">
                     <p>The developer can architect their app to handle diverse workloads by assigning each type of work to a process type. For example, HTTP requests may be handled by a web process, and long-running background tasks handled by a worker process.</p>
-                    <p>The process model truly shines when it comes time to scale out. The share-nothing, horizontally partitionable nature of twelve-factor app processes means that adding more concurrency is a simple and reliable operation. The array of process types and number of processes of each type is known as the process formation.</p>
-                    <p>Twelve-factor app processes should never daemonize or write PID files. Instead, rely on the operating system’s process manager (such as systemd, a distributed process manager on a cloud platform, or a tool like Foreman in development) to manage output streams, respond to crashed processes, and handle user-initiated restarts and shutdowns.</p>
+                    <p>The process model truly shines when it comes time to scale out. The share-nothing, horizontally partitionable nature of twelve-factor app processes means that adding more concurrency is a simple and reliable operation. The array of
+                        process types and number of processes of each type is known as the process formation.</p>
+                    <p>Twelve-factor app processes should never daemonize or write PID files. Instead, rely on the operating system’s process manager (such as systemd, a distributed process manager on a cloud platform, or a tool like Foreman in development)
+                        to manage output streams, respond to crashed processes, and handle user-initiated restarts and shutdowns.</p>
                 </aside>
             </section>
             <section>
@@ -1075,7 +1090,9 @@
                 </ul>
                 <aside class="notes">
                     <p>Desechabilidad</p>
-                    <p>Processes shut down gracefully when they receive a SIGTERM signal from the process manager. For a web process, graceful shutdown is achieved by ceasing to listen on the service port (thereby refusing any new requests), allowing any current requests to finish, and then exiting. Implicit in this model is that HTTP requests are short (no more than a few seconds), or in the case of long polling, the client should seamlessly attempt to reconnect when the connection is lost.</p>
+                    <p>Processes shut down gracefully when they receive a SIGTERM signal from the process manager. For a web process, graceful shutdown is achieved by ceasing to listen on the service port (thereby refusing any new requests), allowing any
+                        current requests to finish, and then exiting. Implicit in this model is that HTTP requests are short (no more than a few seconds), or in the case of long polling, the client should seamlessly attempt to reconnect when the connection
+                        is lost.</p>
                 </aside>
             </section>
             <section>
@@ -1106,8 +1123,11 @@
                 </table>
 
                 <aside class="notes">
-                    <p>The twelve-factor developer resists the urge to use different backing services between development and production: Differences between backing services mean that tiny incompatibilities crop up, causing code that worked and passed tests in development or staging to fail in production.</p>
-                    <p>Tools like Docker and Vagrant allow developers to run local environments which closely approximate production environments. The cost of installing and using these systems is low compared to the benefit of dev/prod parity and continuous deployment.</p>
+                    <p>The twelve-factor developer resists the urge to use different backing services between development and production: Differences between backing services mean that tiny incompatibilities crop up, causing code that worked and passed tests
+                        in development or staging to fail in production.</p>
+                    <p>Tools like Docker and Vagrant allow developers to run local environments which closely approximate production environments. The cost of installing and using these systems is low compared to the benefit of dev/prod parity and continuous
+                        deployment.
+                    </p>
                 </aside>
             </section>
             <section>
