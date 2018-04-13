@@ -319,14 +319,14 @@
                 <ul>
                     <li>Github is our hosted version control system based on git.</li>
                     <li>Our project is open source and public, if you want to host git privately, you can set up your own git server or more commonly: Payment plan Github account, Github Enterprise, Bitbucket or Gitlab.</li>
-                    <li>We made an organisation at Github named friendsofscalability, request access there!</li>
+                    <li>We made an organisation at Github named friends-of-scalability, request access there!</li>
                 </ul>
             </section>
             <section>
 
                 <h2>Github</h2>
 
-                <img data-src="img/github-repository.png" width="80%" />
+                <img data-src="img/github-repository.png" width="60%" />
             </section>
             <section>
 
@@ -432,7 +432,7 @@
                         <li>container networking specification</li>
                         <li>container storage specification</li>
                     </ul>
-                    <li>After the success of docker several companies built its own container runtime engines, notable ones are rkt from CoreOS or CRI-O from CNCF.</li>
+                    <li>After the success of docker several companies built its own container runtime engines, notable ones are rkt from CoreOS or CRI-O from <a href="https://www.cncf.io/projects/">CNCF</a>.</li>
                 </ul>
 
             </section>
@@ -856,7 +856,7 @@
                 <h2>Scaling policies: simple</h2>
                 <ul>
                     <li>You configure an alarm following that triggers when a metric (CPU/Memory/Requests/Messages in queue) pass a threshold.</li>
-                    <li>The alarm will trigger an add capacity action (scale up) or reduce capacity action (scale down).</li>
+                    <li>The alarm will trigger an add capacity action (scale out or scale up) or reduce capacity action (scale in or scale down).</li>
                     <li>There is a cooldown to give enough time to get metrics and reevaluate.</li>
                 </ul>
             </section>
@@ -866,7 +866,7 @@
                 <ul>
                     <li>In AWS, could be anything that triggers the Autoscaling API but Cloudwatch is the default method.</li>
                     <li>In Kubernetes, you get metrics from heapster (
-                        <1.9) or from metricsServer (1.9+).</li>
+                        <1.9) or from metricsServer (1.9+) and the scaling event is triggered by an HorizontalPodAutoscaler object (hpa).</li>
 
                 </ul>
             </section>
@@ -997,7 +997,6 @@
                     <li>Resource handles to the database, Memcached, and other backing services</li>
                     <li>Credentials to external services such as Amazon S3 or Twitter</li>
                     <li>Per-deploy values such as the canonical hostname for the deploy</li>
-                    <li></li>
                 </ul>
                 <aside class="notes">
                     <p>The twelve-factor app stores config in environment variables (often shortened to env vars or env). Env vars are easy to change between deploys without changing any code; unlike config files, there is little chance of them being checked
@@ -1009,7 +1008,7 @@
                 <p>A backing service is any service the app consumes over the network as part of its normal operation.</p>
                 <ul>
                     <li>Datastores (such as MySQL or CouchDB)</li>
-                    <li>Messaging/queueing systems (such as RabbitMQ or Beanstalkd)</li>
+                    <li>Messaging/queueing systems (such as RabbitMQ or Kafka)</li>
                     <li>SMTP services for outbound email (such as Postfix)</li>
                     <li>Caching systems (such as Memcached)</li>
                 </ul>
@@ -1040,9 +1039,7 @@
                 <h2>VI. Processes</h2>
                 <p>The app is executed in the execution environment as one or more stateless processes.</p>
                 <p>Twelve-factor processes are stateless and share-nothing. Any data that needs to persist must be stored in a stateful backing service, typically a database.</p>
-                <ul>
-                    <li></li>
-                </ul>
+
 
                 <aside class="notes">
                     <p>Asset packagers in build stage</p>
@@ -1163,8 +1160,7 @@
                     <li><b>Follower/leader approach (asynchronous replication)</b></li>
                     <li><b>Multileader</b></li>
                     <li><b>Equal nodes (there are no leaders).</b></li>
-                    <li>NoSQL, NewSQL or Relational?</li>
-                    <li>(Event) Queues.</li>
+                    <li><b>(Event) Queues.</b></li>
                 </ul>
             </section>
 
@@ -1178,15 +1174,6 @@
                     <li><b>Open question:</b> What happens when leader goes down?</li>
                 </ul>
             </section>
-
-            <section>
-                <h2>Equal nodes (there are no leaders)</h2>
-                <ul>
-                    <li>All the nodes are equal, there are no leader nodes.</li>
-                    <li>If the client can connect to one node it would receive the nodes list it can connect.</li>
-                    <li>Data is sharded and replicated between the nodes of the cluster. </li>
-                </ul>
-            </section>
             <section>
                 <h2>Multileader</h2>
                 <ul>
@@ -1194,6 +1181,14 @@
                     <li>This is achieved through <i>synchronous</i> replication</li>
                     <li><b>Open question:</b> How conflicts are solved?</li>
                     <li>If one of the multiple leaders goes down what happens?</li>
+                </ul>
+            </section>
+            <section>
+                <h2>Equal nodes (there are no leaders)</h2>
+                <ul>
+                    <li>All the nodes are equal, there are no leader nodes.</li>
+                    <li>If the client can connect to one node it would receive the nodes list it can connect.</li>
+                    <li>Data is sharded and replicated between the nodes of the cluster. </li>
                 </ul>
             </section>
             <section>
@@ -1213,6 +1208,8 @@
                 <h2>CAP theorem</h2>
                 <p style="text-align: center;"><img data-src="img/CAP-overview.png" width="60%" style="margin: auto auto;" /></p>
                 <p style="font-size:14px">Images taken from this good article by Robert Greiner <a href="http://robertgreiner.com/2014/08/cap-theorem-revisited/">here</a></p>
+                <p style="font-size:14px">We recommend you to read the series of Jepsen articles from Kyle Kingsbury <a href="https://aphyr.com/tags/jepsen">here</a></p>
+
 
             </section>
             <section>
@@ -1586,6 +1583,10 @@
             <section>
                 <h2>Being on call</h2>
             </section>
+            <section>
+                <h2>Thanks</h2>
+            </section>
+
         </div>
     </div>
 
@@ -1627,4 +1628,4 @@
 
 </footer>
 
-</html>
+</html>f
